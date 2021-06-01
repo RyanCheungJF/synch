@@ -1,0 +1,19 @@
+{
+  "name": "Synch",
+  "description": "Text To Speech for the visually impaired",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "tts"
+  ],
+
+  "content_scripts": [
+   {
+     "matches": ["<all_urls>"],
+
+     "js": ["app.js"]
+   }
+ ]
+
+
+}
