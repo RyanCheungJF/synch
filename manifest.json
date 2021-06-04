@@ -4,8 +4,25 @@
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
-    "tts"
+    "tts",
+    "activeTab",
+    "unlimitedStorage"
   ],
+
+  "icons":{
+    "16": "imgs/logo.png",
+    "24": "imgs/logo.png",
+    "32": "imgs/logo.png"
+
+  },
+
+  "action":{
+
+     "default_title":"Synch Settings",
+     "default_popup": "popup.html"
+
+
+   },
 
   "content_scripts": [
    {
@@ -14,6 +31,5 @@
      "js": ["app.js"]
    }
  ]
-
 
 }
