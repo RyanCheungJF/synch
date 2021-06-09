@@ -6,9 +6,21 @@
   "permissions": [
     "tts",
     "activeTab",
-    "unlimitedStorage"
+    "tabs",
+    "webNavigation",
+    "unlimitedStorage",
+    "contextMenus"
   ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "background":{
+    "service_worker": "background.js",
+    "service_worker":"contextMenu.js"
 
+
+  },
   "icons":{
     "16": "imgs/logo.png",
     "24": "imgs/logo.png",
@@ -28,7 +40,9 @@
    {
      "matches": ["<all_urls>"],
 
-     "js": ["app.js"]
+     "js": ["app.js",
+       "contextMenu.js"
+     ]
    }
  ]
 

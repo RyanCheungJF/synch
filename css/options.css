@@ -1,0 +1,23 @@
+
+body {
+    background-color: #333300;
+    color: dodgerblue;
+}
+
+h1 {
+    color: grey;
+    text-align: center;
+    font: large;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-width:0;
+}
+
+.input {
+
+
+}
