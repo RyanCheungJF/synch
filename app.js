@@ -1,4 +1,4 @@
-// Global speed, future feature to customize voice of reader and speed.
+texttoSpeech// Global speed, future feature to customize voice of reader and speed.
 var speak_rate = 1.1;
 //******************************************************************
 const paragraphs = document.querySelectorAll('p');
@@ -57,12 +57,23 @@ function findLink(str) {
     filterlinks = [];
     filtertitles = [];
     for (i in hyperlinks) {
-        if (hyperlinks[i].includes(str)) {
+        if (hyperlinks[i].toLowerCase().includes(str.toLowerCase())) { //Lower case to make case insensitive case
             filterlinks.push(hyperlinks[i]);
             filtertitles.push(linkTitles[i]);
         }
+
+
+
+
     }
 }
+function texttoSpeech(text){   //Just call this everytime u want a speech
+  let engine = window.speechSynthesis;
+  engine.cancel();
+  engine.speak(new SpeechSynthesisUtterance(text));
+
+
+};
 
 
 // This event listener will await a prompt from the user to search for. Entering nothing will return all hyperlinks.
@@ -72,14 +83,15 @@ window.addEventListener("keypress",
             searched = true;
             let engine = window.speechSynthesis;
             engine.rate = speak_rate;
-            engine.speak(new SpeechSynthesisUtterance("Please type in the keyword and hit enter to search among hyperlinks!"));
+
+            texttoSpeech("Please type in the keyword and hit enter to search among hyperlinks!");
             var search = window.prompt("Search keyword for hyperlinks: ");
             findLink(search);
-            engine.speak(new SpeechSynthesisUtterance("Filtering for keyword " + search));
+            texttoSpeech("Filtering for keyword " + search);
             if (filterlinks.length === 0) {
-                engine.speak(new SpeechSynthesisUtterance("Sorry, there is no link with this keyword " + search));
+                texttoSpeech("Sorry, there is no link with this keyword " + search);
             } else {
-                engine.speak(new SpeechSynthesisUtterance("Done! Press 4 to alternate between the search results!"));
+                texttoSpeech("Done! Press 4 to alternate between the search results!");
             }
         }
     }
@@ -92,12 +104,12 @@ window.addEventListener("keypress",
             let engine = window.speechSynthesis;
             engine.rate = speak_rate;
             if (!searched) {
-                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
+                texttoSpeech("Please search for a keyword by hitting 3!");
             } else {
                 if (links_counter === filterlinks.length) {
                     links_counter = 0;
                 }
-                engine.speak(new SpeechSynthesisUtterance(filtertitles[links_counter]));
+                texttoSpeech(filtertitles[links_counter]);
                 links_counter++;
             }
         }
@@ -111,9 +123,9 @@ window.addEventListener("keypress",
             let engine = window.speechSynthesis;
             engine.rate = speak_rate;
             if (last_link == null) {
-                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
+                texttoSpeech("Please search for a keyword by hitting 3!");
             } else {
-                engine.speak(new SpeechSynthesisUtterance("Redirecting you to " + last_link[1]));
+                texttoSpeech("Redirecting you to " + last_link[1]);
                 window.location.href = last_link[0];
             }
         }
@@ -150,8 +162,9 @@ window.addEventListener("keypress",
                 para_pressed = !para_pressed;
                 window.setTimeout(function() {para_pressed = false;}, 500);
             }
-            engine.cancel();
-            engine.speak(new SpeechSynthesisUtterance(paragraphs[para_counter].childNodes[0].nodeValue));
+
+            texttoSpeech(paragraphs[para_counter].childNodes[0].nodeValue);
+
         }
     }
 );
@@ -163,9 +176,10 @@ window.addEventListener("keypress",
             if (headers_counter > headers.length) {
                 headers_counter = 0;
             }
-            let engine = new SpeechSynthesisUtterance(headers[headers_counter].childNodes[0].nodeValue);
-            engine.rate = speak_rate;
-            window.speechSynthesis.speak(engine);
+            //let engine = new SpeechSynthesisUtterance(headers[headers_counter].childNodes[0].nodeValue);
+            //engine.rate = speak_rate;
+            //window.speechSynthesis.speak(engine);
+            texttoSpeech(headers[headers_counter].childNodes[0].nodeValue);
             headers_counter++;
         }
     });
