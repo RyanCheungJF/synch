@@ -11,12 +11,18 @@ const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 var headers_counter = -1;
 var headers_pressed = false;
 var headers_lastHTML = headers[headers.length - 1].innerHTML;
+//******************************************************************
+const listelems = document.querySelectorAll('li');
+var list_counter = -1;
+var list_pressed = false;
+var list_lastHTML = listelems[listelems.length - 1].innerHTML;
 //****************************************************************** 
 const links = document.querySelectorAll('a');
 var links_counter = 0;
 var searched = false;
 var last_link = null;
 //****************************************************************** 
+module.exports = index;
 
 // Hyperlink Handling
 var hyperlinks = [];
@@ -129,7 +135,7 @@ window.addEventListener("keypress",
             engine.speak(
                 new SpeechSynthesisUtterance(
                     cleanupText(paragraphs[index(para_counter, paragraphs.length)]
-                        .childNodes[0].nodeValue, paragraphs, para_counter)));
+                        .innerHTML, paragraphs, para_counter)));
             window.setTimeout(function() { 
                 paragraphs[index(para_counter, paragraphs.length)].innerHTML = "<mark>" + para_lastHTML + "</mark>"; 
             }, 500);
@@ -150,13 +156,39 @@ window.addEventListener("keypress",
                 headers_pressed = !headers_pressed;
                 window.setTimeout(function() { headers_pressed = false; }, 500);
             }
-            headers_lastHTML = headers[index(headers_counter, index.length)].innerHTML;
+            headers_lastHTML = headers[index(headers_counter, headers.length)].innerHTML;
             engine.cancel();
             engine.speak(new SpeechSynthesisUtterance(
                 cleanupText(headers[index(headers_counter, headers.length)]
-                    .childNodes[0].nodeValue, headers, headers_counter)));
+                    .innerHTML, headers, headers_counter)));
             window.setTimeout(function() { 
                 headers[index(headers_counter, headers.length)].innerHTML = "<mark>" + headers_lastHTML + "</mark>"; 
+            }, 500);
+        }
+    }
+);
+
+// List Elements
+window.addEventListener("keypress",
+    function(event) {       
+        if (event.key.charCodeAt(0) === 53) {
+            resetHighlights();
+            if (list_pressed) {
+                list_counter = list_counter - 2;
+                list_pressed = !list_pressed;
+            } else {
+                list_counter++;
+                list_pressed = !list_pressed;
+                window.setTimeout(function() { list_pressed = false; }, 500);
+            }
+            list_lastHTML = listelems[index(list_counter, listelems.length)].innerHTML;
+            engine.cancel();
+            engine.speak(
+                new SpeechSynthesisUtterance(
+                    cleanupText(listelems[index(list_counter, listelems.length)]
+                        .innerHTML, listelems, list_counter)));
+            window.setTimeout(function() { 
+                listelems[index(list_counter, listelems.length)].innerHTML = "<mark>" + list_lastHTML + "</mark>"; 
             }, 500);
         }
     }
@@ -171,17 +203,26 @@ function index(num, len) {
 function resetHighlights() {
     paragraphs[index(para_counter, paragraphs.length)].innerHTML = para_lastHTML;
     headers[index(headers_counter, headers.length)].innerHTML = headers_lastHTML;
+    listelems[index(list_counter, listelems.length)].innerHTML = list_lastHTML;
 }
 
 // Certain strings are null as they are wrapped in other tags, this just tries to parse the content out
 function cleanupText(str, arr, count) {
     if (str == null) {
         str = arr[index(count % arr.length, arr.length)].innerHTML;
-        while(str.indexOf('<') != -1 && str.indexOf('>') != -1) {
-            var left = str.indexOf('<');
-            var right = str.indexOf('>');
-            str = str.substring(0, left) + str.substring(right + 1, str.length);
-        }
+    }
+    while (str.indexOf('<') != -1 && str.indexOf('>') != -1) {
+        var left = str.indexOf('<');
+        var right = str.indexOf('>');
+        str = str.substring(0, left) + str.substring(right + 1, str.length) + " ";
+    }
+    var whitespace = 0;
+    while (str.charAt(str.length - whitespace - 1) == " ") {
+        whitespace++;
+    } 
+    str = str.substring(0, str.length - whitespace);
+    if (str.substring(0, str.length / 2) == str.substring(str.length / 2, str.length)) {
+        str = str.substring(0, str.length / 2);
     }
     return str;
 }
