@@ -22,7 +22,6 @@ var links_counter = 0;
 var searched = false;
 var last_link = null;
 //****************************************************************** 
-module.exports = index;
 
 // Hyperlink Handling
 var hyperlinks = [];
