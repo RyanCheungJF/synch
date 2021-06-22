@@ -215,10 +215,7 @@ function cleanupText(str, arr, count) {
         var right = str.indexOf('>');
         str = str.substring(0, left) + str.substring(right + 1, str.length) + " ";
     }
-    var whitespace = 0;
-    while (str.charAt(str.length - whitespace - 1) == " ") {
-        whitespace++;
-    } 
+    str = str.trim();
     str = str.substring(0, str.length - whitespace);
     if (str.substring(0, str.length / 2) == str.substring(str.length / 2, str.length)) {
         str = str.substring(0, str.length / 2);
