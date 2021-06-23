@@ -73,6 +73,10 @@ window.addEventListener("keypress",
             engine.cancel();
             engine.speak(new SpeechSynthesisUtterance("Please type in the keyword and hit enter to search among hyperlinks!"));
             var search = window.prompt("Search keyword for hyperlinks: ");
+            if (search == null) {
+                engine.speak(new SpeechSynthesisUtterance("Cancelling search."));
+                return;
+            }
             findLink(search);
             engine.speak(new SpeechSynthesisUtterance("Filtering for keyword " + search));
             if (filterlinks.length === 0) {
@@ -216,7 +220,6 @@ function cleanupText(str, arr, count) {
         str = str.substring(0, left) + str.substring(right + 1, str.length) + " ";
     }
     str = str.trim();
-    str = str.substring(0, str.length - whitespace);
     if (str.substring(0, str.length / 2) == str.substring(str.length / 2, str.length)) {
         str = str.substring(0, str.length / 2);
     }
