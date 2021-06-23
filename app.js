@@ -1,12 +1,12 @@
 // Global speed, future feature to customize voice of reader and speed.
 let engine = window.speechSynthesis;
 engine.rate = 1.4;
-//****************************************************************** 
+//******************************************************************
 const paragraphs = document.querySelectorAll('p');
 var para_counter = -1;
 var para_pressed = false;
 var para_lastHTML = paragraphs[paragraphs.length - 1].innerHTML;
-//****************************************************************** 
+//******************************************************************
 const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 var headers_counter = -1;
 var headers_pressed = false;
@@ -16,17 +16,17 @@ const listelems = document.querySelectorAll('li');
 var list_counter = -1;
 var list_pressed = false;
 var list_lastHTML = listelems[listelems.length - 1].innerHTML;
-//****************************************************************** 
+//******************************************************************
 const links = document.querySelectorAll('a');
 var links_counter = 0;
 var searched = false;
 var last_link = null;
-//****************************************************************** 
+//******************************************************************
 
 // Hyperlink Handling
 var hyperlinks = [];
 var linkTitles = [];
-for (var link = 0; link < links.length; link++)  {      
+for (var link = 0; link < links.length; link++)  {
     let hyperlink = links[link].getAttribute("href");
     if (hyperlink != null && hyperlink.substring(0, 4) != "http") {
         if (hyperlink.substring(0, 1) == "/") {
@@ -82,7 +82,7 @@ window.addEventListener("keypress",
             }
         }
     }
-); 
+);
 
 // Used to alternate through the hyperlinks, similar to paragraphs.
 window.addEventListener("keypress",
@@ -118,7 +118,7 @@ window.addEventListener("keypress",
 
 // Paragraphs
 window.addEventListener("keypress",
-    function(event) {       
+    function(event) {
         if (event.key.charCodeAt(0) === 49) {
             resetHighlights();
             if (para_pressed) {
@@ -135,8 +135,8 @@ window.addEventListener("keypress",
                 new SpeechSynthesisUtterance(
                     cleanupText(paragraphs[index(para_counter, paragraphs.length)]
                         .innerHTML, paragraphs, para_counter)));
-            window.setTimeout(function() { 
-                paragraphs[index(para_counter, paragraphs.length)].innerHTML = "<mark>" + para_lastHTML + "</mark>"; 
+            window.setTimeout(function() {
+                paragraphs[index(para_counter, paragraphs.length)].innerHTML = "<mark>" + para_lastHTML + "</mark>";
             }, 500);
         }
     }
@@ -160,8 +160,8 @@ window.addEventListener("keypress",
             engine.speak(new SpeechSynthesisUtterance(
                 cleanupText(headers[index(headers_counter, headers.length)]
                     .innerHTML, headers, headers_counter)));
-            window.setTimeout(function() { 
-                headers[index(headers_counter, headers.length)].innerHTML = "<mark>" + headers_lastHTML + "</mark>"; 
+            window.setTimeout(function() {
+                headers[index(headers_counter, headers.length)].innerHTML = "<mark>" + headers_lastHTML + "</mark>";
             }, 500);
         }
     }
@@ -169,7 +169,7 @@ window.addEventListener("keypress",
 
 // List Elements
 window.addEventListener("keypress",
-    function(event) {       
+    function(event) {
         if (event.key.charCodeAt(0) === 53) {
             resetHighlights();
             if (list_pressed) {
@@ -186,8 +186,8 @@ window.addEventListener("keypress",
                 new SpeechSynthesisUtterance(
                     cleanupText(listelems[index(list_counter, listelems.length)]
                         .innerHTML, listelems, list_counter)));
-            window.setTimeout(function() { 
-                listelems[index(list_counter, listelems.length)].innerHTML = "<mark>" + list_lastHTML + "</mark>"; 
+            window.setTimeout(function() {
+                listelems[index(list_counter, listelems.length)].innerHTML = "<mark>" + list_lastHTML + "</mark>";
             }, 500);
         }
     }
@@ -218,7 +218,7 @@ function cleanupText(str, arr, count) {
     var whitespace = 0;
     while (str.charAt(str.length - whitespace - 1) == " ") {
         whitespace++;
-    } 
+    }
     str = str.substring(0, str.length - whitespace);
     if (str.substring(0, str.length / 2) == str.substring(str.length / 2, str.length)) {
         str = str.substring(0, str.length / 2);
