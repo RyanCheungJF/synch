@@ -7,8 +7,8 @@
         * [1. Installation](#1-installation)
         * [2. Usage](#2-usage)
             * [2.1 Main Keypresses](#21-main-keypresses)
-            * [2.2 Highlighting ](#22-highlighting-)
-            * [2.3 Settings ](#23-settings-)
+            * [2.2 Highlighting ](#22-highlighting)
+            * [2.3 Settings ](#23-settings)
             * [2.4 Ad Detection](#24-ad-detection)
         * [3. Feedback](#3-feedback)
 
