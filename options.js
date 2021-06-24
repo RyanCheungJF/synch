@@ -25,12 +25,18 @@ function checkKeys(val) {
 // Saves options to chrome.storage
 function save_options() {
     var paras = document.getElementById('paras').value;
+    checkKeys(paras);
+    kvps.set('paragraphs', paras);
     var headers = document.getElementById('headers').value;
+    checkKeys(headers);
+    kvps.set('headers', paras);
     var hlinks = document.getElementById('hlinks').value;
+    checkKeys(hlinks);
+    kvps.set('hyperlinks', paras);
     chrome.storage.sync.set({
         paras: paras,
-        headers:headers,
-        hinks:hlinks,
+        headers: headers,
+        hinks: hlinks,
     }, function () {
         // Update status to let user know options were saved.
         var save = document.getElementById('save');
