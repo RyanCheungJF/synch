@@ -2,17 +2,15 @@
 
 ## Team buttersmarsh (Gemini)
 
-* [**Orbital 2021 User Guide** ](#**orbital-2021-user-guide**-)
-    * [Team buttersmarsh (Gemini)](#team-buttersmarsh-(gemini))
-        * [1. Installation](#1.-installation)
-        * [2. Usage](#2.-usage)
-            * [2.1 Main Keypresses](#2.1-main-keypresses)
-            * [2.2 Highlighting ](#2.2-highlighting-)
-            * [2.3 Settings ](#2.3-settings-)
-            * [2.4 Ad Detection](#2.4-ad-detection)
-        * [3. Feedback](#3.-feedback)
-
-<!-- table of contents created by Adrian Bonnet, see https://Relex12.github.io/Markdown-Table-of-Contents for more -->
+* [**Orbital 2021 User Guide** ](#orbital-2021-user-guide)
+    * [Team buttersmarsh (Gemini)](#team-buttersmarsh-gemini)
+        * [1. Installation](#1-installation)
+        * [2. Usage](#2-usage)
+            * [2.1 Main Keypresses](#21-main-keypresses)
+            * [2.2 Highlighting ](#22-highlighting-)
+            * [2.3 Settings ](#23-settings-)
+            * [2.4 Ad Detection](#24-ad-detection)
+        * [3. Feedback](#3-feedback)
 
 ### 1. Installation
 
