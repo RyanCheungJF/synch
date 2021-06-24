@@ -1,18 +1,18 @@
 // HashMap of defaults
 let kvps = new Map();
-kvps.put('paragraphs', 1);
-kvps.put('headers', 2);
-kvps.put('hyperlinksearch', 3);
-kvps.put('hyperlinks', 4);
-kvps.put('redirect', 0);
-kvps.put('voice', 0);
-kvps.put('rate', 1);
+kvps.set('paragraphs', 1);
+kvps.set('headers', 2);
+kvps.set('hyperlinksearch', 3);
+kvps.set('hyperlinks', 4);
+kvps.set('redirect', 0);
+kvps.set('voice', 0);
+kvps.set('rate', 1);
 
 // Checker Function
 function checkKeys(val) {
     for (const [key, value] of Object.entries(kvps)) {
         if (val == value) {
-            alert('This key is already used for another keybind! Pleas choose another key.');
+            alert('The key ${key} is already used for another keybind! Please choose another key.');
             return;
         }
         if (val.charCodeAt(0) < 48 || val.charCodeAt(0) > 122) {
@@ -43,6 +43,7 @@ function save_options() {
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
+/*
 function restore_options() {
     //Set back to default Commands
     chrome.storage.sync.get({
@@ -54,6 +55,6 @@ function restore_options() {
     });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
-
-document.getElementById('save').addEventListener('click',
-    save_options);
+*/
+document.getElementById('save').addEventListener("click",
+    save_options());
