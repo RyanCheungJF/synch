@@ -58,11 +58,11 @@ Apart from the key bindings mentioned under section 2.1, these are the other set
 
 To bring up the settings menu, simply navigate to the top right of the screen to find the extensions manager.
 
-![](../imgs/settings_extension.png)
+![](/imgs/settings_extension.jpg)
 
 Under options, the user can click this to bring one to the settings page as shown below.
 
-![](../imgs/settings_page.png)
+![](/imgs/settings_page.jpg)
 
 Here, the user is able to customize their settings accordingly.
 
