@@ -36,19 +36,19 @@ The initial survey was done on Google Forms and can be found [here](https://form
 
 For our survey, we made 5 users download the current available screen reader on the Chrome store. From our testing, this was found to be one of the best screen readers out of many available for use. We then asked our users several questions, with the results shown below.
 
-![](imgs/pre_survey1.png)
+![](imgs/pre_survey1.jpg)
 
-![](imgs/pre_survey2.png)
+![](imgs/pre_survey2.jpg)
 
-![](imgs/pre_survey3.png)
+![](imgs/pre_survey3.jpg)
 
-![](imgs/pre_survey4.png)
+![](imgs/pre_survey4.jpg)
 
-![](imgs/pre_survey5.png)
+![](imgs/pre_survey5.jpg)
 
-![](imgs/pre_survey6.png)
+![](imgs/pre_survey6.jpg)
 
-![](imgs/pre_survey7.png)
+![](imgs/pre_survey7.jpg)
 
 As such, after rounding up our survey results, we believe that this is indeed an issue that is in need of alleviation, and our group will try to implement the features that have been suggested to us as stated above. More information about the different features can be read under Section 6.
 
