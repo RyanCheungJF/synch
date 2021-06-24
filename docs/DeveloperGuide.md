@@ -43,7 +43,7 @@ Our project will use a number of languages and libraries:
 
 ### 2. Pipeline
 
-#### 2.1 Class Diagram:
+#### 2.1 User Flow:
 
 ![](/imgs/UserFlow.png)
 
