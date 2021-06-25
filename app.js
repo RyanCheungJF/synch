@@ -1,7 +1,3 @@
-// Global speed, future feature to customize voice of reader and speed.
-let engine = window.speechSynthesis;
-engine.rate = 1.4;
-//******************************************************************
 const paragraphs = document.querySelectorAll('p');
 var para_counter = -1;
 var para_pressed = false;
@@ -22,6 +18,19 @@ var links_counter = 0;
 var searched = false;
 var last_link = null;
 //******************************************************************
+let engine = window.speechSynthesis;
+/*
+var all = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li');
+var allarr = [];
+for (var i = 0; i < all.length; i++) {
+    allarr[i] = all[i].innerHTML;
+}
+var allcontent = allarr.filter(i => !i.includes("href"));
+var last_content = allcontent[0].innerHTML; 
+for (var i = 0; i < last_content.length; i++) {
+    last_content[i] = cleanupText(last_content[i], last_content, i);
+}
+*/
 
 // Hyperlink Handling
 var hyperlinks = [];
@@ -46,9 +55,6 @@ for (var link = 0; link < links.length; link++)  {
     }
     hyperlinks[link] = hyperlink;
     linkTitles[link] = linkName;
-    //console.log(link);
-    //console.log(hyperlink);
-    //console.log(linkName);
 }
 
 // Additional function to filter through the hyperlinks
@@ -215,13 +221,24 @@ function cleanupText(str, arr, count) {
         var right = str.indexOf('>');
         str = str.substring(0, left) + str.substring(right + 1, str.length) + " ";
     }
-    var whitespace = 0;
-    while (str.charAt(str.length - whitespace - 1) == " ") {
-        whitespace++;
-    }
-    str = str.substring(0, str.length - whitespace);
+    str = str.trim();
     if (str.substring(0, str.length / 2) == str.substring(str.length / 2, str.length)) {
         str = str.substring(0, str.length / 2);
     }
     return str;
 }
+
+// Testing out to make an event listener that reads in order 
+/*
+window.addEventListener("keypress",
+    function(event) {
+        if (event.key.charCodeAt(0) === 32) {
+            event.preventDefault();
+            engine.cancel();
+            engine.speak(
+                new SpeechSynthesisUtterance(allcontent[allcontent.indexOf(last_content) + 1]));
+            last_content = allcontent[allcontent.indexOf(last_content) + 1];
+        }
+    }
+);
+*/

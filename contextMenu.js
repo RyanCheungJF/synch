@@ -6,23 +6,19 @@ var contextMenuItem = {
 };
 
 chrome.contextMenus.create(contextMenuItem,function() {
-  if (chrome.extension.lastError) {
-    console.log("Got expected error: " + chrome.extension.lastError.message);
-  }); //Creating the selection tab in chrome right-click
-
+    if (chrome.extension.lastError) {
+      console.log("Got expected error: " + chrome.extension.lastError.message);
+    }
+}); //Creating the selection tab in chrome right-click
 
 chrome.contextMenus.onClicked.addListener(function(clickData){
-
   if(clickData.menuItemId == "speakwords" && clickData.selectionText){
-
-  let engine = window.speechSynthesis;
-  engine.rate = 1.0;
-  engine.cancel();
-  engine.speak(new SpeechSynthesisUtterance("Hello"));
-
-}
-}
-);
+    let engine = window.speechSynthesis;
+    engine.rate = 1.0;
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("Hello"));
+  }
+});
 
 
 //Highlight text and tts activated
