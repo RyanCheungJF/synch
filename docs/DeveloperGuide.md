@@ -8,7 +8,7 @@
             * [1.1 Main Design](#11-main-design)
             * [1.2 Relevant Tools](#12-relevant-tools)
         * [2. Pipeline](#2-pipeline)
-            * [2.1 Class Diagram:](#21-class-diagram)
+            * [2.1 User Flow:](#21-user-flow)
             * [2.2 Class Diagram:](#22-class-diagram)
         * [3. Implementation](#3-implementation)
             * [3.1 Speaking Feature](#31-speaking-feature)
