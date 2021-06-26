@@ -1,3 +1,5 @@
+let engine = window.speechSynthesis;
+//******************************************************************
 const paragraphs = document.querySelectorAll('p');
 var para_counter = -1;
 var para_pressed = false;
@@ -18,8 +20,6 @@ var links_counter = 0;
 var searched = false;
 var last_link = null;
 //******************************************************************
-let engine = window.speechSynthesis;
-/*
 var all = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li');
 var allarr = [];
 for (var i = 0; i < all.length; i++) {
@@ -27,10 +27,12 @@ for (var i = 0; i < all.length; i++) {
 }
 var allcontent = allarr.filter(i => !i.includes("href"));
 var last_content = allcontent[0].innerHTML; 
-for (var i = 0; i < last_content.length; i++) {
-    last_content[i] = cleanupText(last_content[i], last_content, i);
+var all_lastHTML = last_content;
+var temp = 0;
+for (var i = 0; i < allcontent.length; i++) {
+    allcontent[i] = cleanupText(allcontent[i], allcontent, i);
 }
-*/
+//******************************************************************
 
 // Hyperlink Handling
 var hyperlinks = [];
@@ -136,6 +138,7 @@ window.addEventListener("keypress",
                 window.setTimeout(function() { para_pressed = false; }, 500);
             }
             para_lastHTML = paragraphs[index(para_counter, paragraphs.length)].innerHTML;
+            last_content = para_lastHTML;
             engine.cancel();
             engine.speak(
                 new SpeechSynthesisUtterance(
@@ -162,6 +165,7 @@ window.addEventListener("keypress",
                 window.setTimeout(function() { headers_pressed = false; }, 500);
             }
             headers_lastHTML = headers[index(headers_counter, headers.length)].innerHTML;
+            last_content = headers_lastHTML;
             engine.cancel();
             engine.speak(new SpeechSynthesisUtterance(
                 cleanupText(headers[index(headers_counter, headers.length)]
@@ -187,6 +191,7 @@ window.addEventListener("keypress",
                 window.setTimeout(function() { list_pressed = false; }, 500);
             }
             list_lastHTML = listelems[index(list_counter, listelems.length)].innerHTML;
+            last_content = list_lastHTML;
             engine.cancel();
             engine.speak(
                 new SpeechSynthesisUtterance(
@@ -209,6 +214,7 @@ function resetHighlights() {
     paragraphs[index(para_counter, paragraphs.length)].innerHTML = para_lastHTML;
     headers[index(headers_counter, headers.length)].innerHTML = headers_lastHTML;
     listelems[index(list_counter, listelems.length)].innerHTML = list_lastHTML;
+    all[temp].innerHTML = all_lastHTML;
 }
 
 // Certain strings are null as they are wrapped in other tags, this just tries to parse the content out
@@ -228,17 +234,28 @@ function cleanupText(str, arr, count) {
     return str;
 }
 
-// Testing out to make an event listener that reads in order 
-/*
+// Reads in natural order instead according to the DOM
 window.addEventListener("keypress",
     function(event) {
         if (event.key.charCodeAt(0) === 32) {
             event.preventDefault();
+            resetHighlights();
+            var ind = allcontent.indexOf(last_content) + 1;
+            if (ind > allcontent.length) {
+                ind = 0;
+            }
             engine.cancel();
-            engine.speak(
-                new SpeechSynthesisUtterance(allcontent[allcontent.indexOf(last_content) + 1]));
-            last_content = allcontent[allcontent.indexOf(last_content) + 1];
+            engine.speak(new SpeechSynthesisUtterance(allcontent[ind]));
+            last_content = allcontent[ind];
+            var sieve;
+            for (var i = 0; i < all.length; i++) {
+                if (all[i].innerHTML.includes(last_content)) {
+                    sieve = all[i].innerHTML;
+                    temp = i;
+                }
+            }
+            all_lastHTML = sieve;
+            window.setTimeout(function() { all[temp].innerHTML = "<mark>" + sieve + "</mark>"; }, 500);
         }
     }
 );
-*/

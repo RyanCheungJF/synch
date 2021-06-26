@@ -21,8 +21,6 @@
         * [8. Survey Results](#8-survey-results)
         * [9. Final Thoughts](#9-final-thoughts)
 
-<!-- table of contents created by Adrian Bonnet, see https://Relex12.github.io/Markdown-Table-of-Contents for more -->
-
 ### 1. System Design
 
 #### 1.1 Main Design
@@ -109,65 +107,6 @@ For example, this returns an array of all the headers. We can then access any el
 `h['index'].childNode[0].nodeValue;`
 
 Alternatively, we can view it using:
-
-`h['index'].innerHTML;`
-
-<u>Complications:</u>
-
-Certain complications include the content being nested in multiple layers, as such we try to clean the text up by detecting other tags present in the string filtered out, as the engine is unable to read a messy string. 
-
-<u>Improvements:</u>
-
-However, our additional method used to clean the string is not full-proof as there are many possible different tags and formatters used by different sites. As such, a better solution would be to integrate a machine learning algorithm to filter the string more effectively.
-
-### 4. Design
-
-Alternative designs for consideration at the initial stage of our project:
-
-- Alternative 1: iOS Application
-  - Usage of libraries such as [requests](https://pypi.org/project/requests/), [BeautifulSoup](https://pypi.org/project/beautifulsoup4/) and [pyttsx3](https://pypi.org/project/pyttsx3/) and stacks such as [BeeWare](https://beeware.org/) to convert python code to an app.
-  - Pros: Python Libraries such as BeautifulSoup are well defined and easy to use, and BeeWare allows us to write apps even in Python.
-  - Cons: Most apps are written with stacks such as React with JavaScript instead, and BeeWare is still in development.
-  - Cons: The iPhone equivalent of a screen reader would be the in-built Voiceover app, unfortunately there is no API made readily available online to access and build upon it.
-
-- Alternative 2: Web Extension
-  - Usage of library speechSynthesisUtterance.
-  - Pros: Easier to integrate as chrome extensions by default are written in HTML, CSS and JS.
-  - Cons: Harder to debug and write code in JavaScript as compared to Python.
-
-### 5. Settings Page
-
-The logic used to make the settings page can be found under ['options.js'](https://github.com/RyanCheungJF/Synch/blob/main/options.js), with the HTML under ['options.html'](https://github.com/RyanCheungJF/Synch/blob/main/options.html) respectively. 
-
-As different keypresses are made to activate and read different sections of the website, we wanted to provide users with the flexibility to customize their experience. The settings makes use of Chrome's storage sync [API](https://developer.chrome.com/docs/extensions/reference/storage/#property-sync) to export and import the different values needed between each file.
-
-The function `checkKeys` is used to check if there any clashes in key bindings, or if certain disallowed keys are being attempted to be in use.
-
-To be done by Milestone 3.
-
-### 6. Ad Detection
-
-To be done by Milestone 3.
-
-### 7. Testing
-
-We decided to adopt unit testing to test the different components of our web extension. A separate test file ['app.test.js'](https://github.com/RyanCheungJF/Synch/blob/main/app.test.js) can be found in the repository containing tests made with [jest](https://jestjs.io/) to test the functions that we have employed in our code. 
-
-As our web extension is not a traditional mobile/ web app, we are currently still exploring different ways to test the DOM with either jest or jsdom.
-
-To be done by Milestone 3.
-
-### 8. Survey Results
-
-To be done by Milestone 3.
-
-### 9. Final Thoughts
-
-Additional Features that can be implemented in the future:
-
-- Ability to allow the reader to re-visit last visited page.
-
-To be done by Milestone 3.
 
 `h['index'].innerHTML;`
 
