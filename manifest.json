@@ -8,29 +8,53 @@
     "activeTab",
     "tabs",
     "webNavigation",
-    "unlimitedStorage",
+    "storage",
     "contextMenus",
     "declarativeNetRequest",
     "declarativeNetRequestFeedback"
   ],
 
   "declarative_net_request":{
-    "id" : 1,
-  "priority": 1,
-  "action" : { "type" : "block" },
-  "condition" : {
-    "urlFilter" : "easy_list.json",
-    "domains" : ["easy_list.json"],
-    "resourceTypes" : ["script"]
+    "rule_resources":[{
+    "id":"ruleset_1",
+    "enabled":true,
+    "path":"rules.json"
 
+  }]
 
   },
+  "commands": {
+     "Synch": {
+       "suggested_key": {
+         "default": "Ctrl+Shift+X",
+         "mac": "Command+Shift+Y"
+       },
+       "description": "Custom Keybind for Synch"
+     },
+     "_execute_browser_action": {
+       "suggested_key": {
+         "windows": "Ctrl+Shift+Y",
+         "mac": "Command+Shift+Y",
+         "chromeos": "Ctrl+Shift+U",
+         "linux": "Ctrl+Shift+J"
+       }
+     },
+     "_execute_page_action": {
+     "suggested_key": {
+       "default": "Ctrl+Shift+E",
+       "windows": "Alt+Shift+P",
+       "mac": "Alt+Shift+P"
+     }
+   }
+ },
+
+
 
 
 
   "options_ui": {
     "page": "options.html",
-    "open_in_tab": false
+    "open_in_tab": true
   },
   "background":{
     "service_worker": "background.js",
@@ -58,7 +82,6 @@
      "matches": ["<all_urls>"],
 
      "js": ["app.js",
-       "contextMenu.js",
        "adblock.js"
      ]
    }

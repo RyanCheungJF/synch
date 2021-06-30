@@ -1,5 +1,3 @@
-
-
 f = open("easylist.rst","r")
 f_out = open("easy_list.json","w")
 arr = []

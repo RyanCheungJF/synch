@@ -1,7 +1,9 @@
 
 body {
-    background-color: #333300;
-    color: dodgerblue;
+    background-image:url('../imgs/logo.png');
+    color: #00fff7;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 h1 {
