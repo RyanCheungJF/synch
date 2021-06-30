@@ -1,8 +1,4 @@
 /*
-var easy_list = e.
-var blocked_sites = JSON.parse(easy_list);
-*/
-
 var blocked_sites = ["*googleadservices.com/*",
 ,"*tigerbrokers.com.sg/*"];
 
@@ -13,3 +9,5 @@ chrome.WebRequest.onBeforeRequest.addListener(function(content){
 {urls:blocked_sites},
 ["blocking"]
 )
+*/
+console.log("Running adblock");

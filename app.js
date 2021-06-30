@@ -26,7 +26,7 @@ for (var i = 0; i < allcontent.length; i++) {
     allcontent[i] = cleanupText(allcontent[i], allcontent, i);
 }
 allcontent = allcontent.filter(i => i != undefined).filter(i => i != "");
-var last_content = allcontent[0].innerHTML; 
+var last_content = allcontent[0].innerHTML;
 var all_lastHTML = last_content;
 var temp = 0;
 for (var i = 0; i < all.length; i++) {

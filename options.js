@@ -35,31 +35,6 @@ function checkKeys(val) {
     }
 }
 
-// Saves options to chrome.storage
-function save_options() {
-    var paras = document.getElementById('paras').value;
-    checkKeys(paras);
-    kvps.set('paragraphs', paras);
-    var headers = document.getElementById('headers').value;
-    checkKeys(headers);
-    kvps.set('headers', paras);
-    var hlinks = document.getElementById('hlinks').value;
-    checkKeys(hlinks);
-    kvps.set('hyperlinks', paras);
-    chrome.storage.sync.set({
-        paras: paras,
-        headers: headers,
-        hinks: hlinks,
-    }, function () {
-        // Update status to let user know options were saved.
-        //var save = document.getElementById('save');
-        save.textContent = 'Options saved.';
-        setTimeout(function () {
-            status.textContent = '';
-        }, 750);
-    });
-}
-
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 /*
@@ -75,5 +50,33 @@ function restore_options() {
 }
 document.addEventListener('DOMContentLoaded', restore_options);
 */
-document.getElementById('save').addEventListener("click",
-    save_options());
+document.getElementById('save').addEventListener("click",function () {
+    var paras = document.getElementById('paras').value;
+    checkKeys(paras);
+    kvps.set('paragraphs', paras);
+    var headers = document.getElementById('headers').value;
+    checkKeys(headers);
+    kvps.set('headers', headers);
+    var hlinks = document.getElementById('hlinks').value;
+    checkKeys(hlinks);
+    kvps.set('hyperlinks', hlinks);
+
+    //Set keybinds to local storage
+    chrome.storage.local.set({
+        paragraphs: paras,
+        headers: headers,
+        hyperlinks: hlinks,
+    }, function () {
+        // Update status to let user know options were saved.
+        var save = document.getElementById('save');
+        save.textContent = 'Options saved';
+        setTimeout(function () {
+            save.textContent = 'Save';
+        }, 2000);
+    });
+
+    chrome.storage.local.get(['paragraphs','headers','hyperlinks'],function(data){
+        //window.alert( `The following changes have been made:\nHeaders:${data.headers}\nParagraphs:${data.paragraphs}\nHyperlinks:${data.hyperlinks}`);
+        chrome.tts.speak( `The following changes have been made:\nHeaders:${data.headers}\nParagraphs:${data.paragraphs}\nHyperlinks:${data.hyperlinks}`);
+    });
+});
