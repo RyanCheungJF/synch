@@ -3,8 +3,6 @@ chrome.commands.onCommand.addListener(function(command) {
   window.alert(command);
 });
 
-
-
 /*
     This event triggers when the browser has committed to loading a webpage.
     As opposed to e.g. webNavigation.onCompleted, this will start to run early
@@ -28,19 +26,14 @@ chrome.commands.onCommand.addListener(function(command) {
                 .slice(0, parsedUrl.indexOf('?') == -1 ? parsedUrl.length : parsedUrl.indexOf('?'));
 */
             try {
-                  runadBlock();
-
-                }
-
-
-            catch (err) {
+                runadBlock();
+            } catch (err) {
                 throw err;
             }
 
   //      });
   //  }
 //});
-
 
 function runadBlock() {
     // Inject script from file into the webpage
