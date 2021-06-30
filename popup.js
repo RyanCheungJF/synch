@@ -6,11 +6,8 @@ document.querySelector('#options').addEventListener('click',function() {
     }
 });
 
-document.querySelector('#ourGithub').addEventListener('click', function () {
-    
+document.querySelector('#ourGithub').addEventListener('click', function () {  
     window.open('https://github.com/Niran-Chan'); //Load our Github!
-
-
 });
 
 //document.body.style.backgroundColor = "grey"; //BG colour

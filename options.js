@@ -8,15 +8,28 @@ kvps.set('redirect', 0);
 kvps.set('voice', 0);
 kvps.set('rate', 1);
 
+let engine = window.speechSynthesis;
+
 // Checker Function
 function checkKeys(val) {
-    for (const [key, value] of Object.entries(kvps)) {
-        if (val == value) {
-            alert('The key ${key} is already used for another keybind! Please choose another key.');
-            return;
-        }
-        if (val.charCodeAt(0) < 48 || val.charCodeAt(0) > 122) {
-            alert('This is not an accepted keybind! Please choose another key.');
+    var str = JSON.stringify(val);
+    if (str.length != 1) {
+        let msg = 'Keys must be single digit.';
+        alert(msg)
+        engine.speak(new SpeechSynthesisUtterance(msg));
+        return;
+    }
+    if (str.charCodeAt(0) < 48 || str.charCodeAt(0) > 122) {
+        let msg = 'This is not an accepted keybind! Please choose another key.';
+        alert(msg);
+        engine.speak(new SpeechSynthesisUtterance(msg));
+        return;
+    }
+    for (const [key, value] of kvps.entries()) {
+        if (str == value) {
+            let msg = 'The ' + key + ' is already used for another keybind! Please choose another key.';
+            alert(msg);
+            engine.speak(new SpeechSynthesisUtterance(msg));
             return;
         }
     }
@@ -39,7 +52,7 @@ function save_options() {
         hinks: hlinks,
     }, function () {
         // Update status to let user know options were saved.
-        var save = document.getElementById('save');
+        //var save = document.getElementById('save');
         save.textContent = 'Options saved.';
         setTimeout(function () {
             status.textContent = '';

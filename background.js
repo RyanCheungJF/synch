@@ -24,12 +24,9 @@ chrome.webNavigation.onCommitted.addListener(function (tab) {
                   runadBlock();
                   return;
                 }
-
-
             catch (err) {
                 throw err;
             }
-
         });
     }
 });

@@ -1,4 +1,3 @@
-
 /*
 var easy_list = e.
 var blocked_sites = JSON.parse(easy_list);
