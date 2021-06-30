@@ -21,13 +21,7 @@ var searched = false;
 var last_link = null;
 //******************************************************************
 var all = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li');
-//var allarr = [];
-var allcontent = Array.from(all,item => item.innerHTML).filter(i => !i.includes("href"));
-/*
-for (var i = 0; i < all.length; i++) {
-    allarr[i] = allarr[i].innerHTML;
-}
-*/
+var allcontent = [...all].map(i => i.innerHTML).filter(i => !i.includes("href"));
 for (var i = 0; i < allcontent.length; i++) {
     allcontent[i] = cleanupText(allcontent[i], allcontent, i);
 }
