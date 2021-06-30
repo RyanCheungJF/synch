@@ -9,8 +9,25 @@
     "tabs",
     "webNavigation",
     "unlimitedStorage",
-    "contextMenus"
+    "contextMenus",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
   ],
+
+  "declarative_net_request":{
+    "id" : 1,
+  "priority": 1,
+  "action" : { "type" : "block" },
+  "condition" : {
+    "urlFilter" : "easy_list.json",
+    "domains" : ["easy_list.json"],
+    "resourceTypes" : ["script"]
+
+
+  },
+
+
+
   "options_ui": {
     "page": "options.html",
     "open_in_tab": false
@@ -41,7 +58,8 @@
      "matches": ["<all_urls>"],
 
      "js": ["app.js",
-       "contextMenu.js"
+       "contextMenu.js",
+       "adblock.js"
      ]
    }
  ]
