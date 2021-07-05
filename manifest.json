@@ -11,7 +11,8 @@
     "storage",
     "contextMenus",
     "declarativeNetRequest",
-    "declarativeNetRequestFeedback"
+    "declarativeNetRequestFeedback",
+    "scripting"
   ],
 
   "declarative_net_request":{
@@ -23,30 +24,43 @@
   }]
 
   },
+  "action" : {},
+
   "commands": {
-     "Synch": {
-       "suggested_key": {
-         "default": "Ctrl+Shift+X",
-         "mac": "Command+Shift+Y"
-       },
-       "description": "Custom Keybind for Synch"
-     },
-     "_execute_browser_action": {
-       "suggested_key": {
-         "windows": "Ctrl+Shift+Y",
-         "mac": "Command+Shift+Y",
-         "chromeos": "Ctrl+Shift+U",
-         "linux": "Ctrl+Shift+J"
-       }
-     },
-     "_execute_page_action": {
-     "suggested_key": {
-       "default": "Ctrl+Shift+E",
-       "windows": "Alt+Shift+P",
-       "mac": "Alt+Shift+P"
-     }
-   }
- },
+    "paragraphs": {
+      "suggested_key": {
+
+        "default": "Ctrl+Shift+P"
+
+      },
+
+      "description":"Reading through Paragraphs"
+    },
+
+    "headers":{
+          "suggested_key" : {
+            "default" : "Ctrl+Shift+H"
+          },
+          "description" : "Reading through headers"
+
+
+    },
+    "hyperlinks":{
+      "suggested_key" : {
+        "default" : "Ctrl+Shift+L"
+      },
+      "description" : "Searching through hyperlinks"
+
+    },
+
+    "hyperlinks results":{
+      "suggested_key" : {
+        "default" : "Ctrl+Shift+K"
+      },
+      "description" : "Listing out the results from hyperlinks"
+
+    }
+  },
 
 
 
@@ -57,8 +71,9 @@
     "open_in_tab": true
   },
   "background":{
-    "service_worker": "background.js",
-    "service_worker":"contextMenu.js"
+    "service_worker" : "contextMenu.js",
+    "service_worker": "background.js"
+
 
 
   },
@@ -81,9 +96,7 @@
    {
      "matches": ["<all_urls>"],
 
-     "js": ["app.js",
-       "adblock.js"
-     ]
+     "js": ["app.js" ]
    }
  ]
 
