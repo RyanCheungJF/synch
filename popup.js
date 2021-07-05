@@ -8,7 +8,9 @@ document.querySelector('#options').addEventListener('click',function() {
 
 document.querySelector('#ourGithub').addEventListener('click', function () {
 
+
     window.open('https://github.com/RyanCheungJF/Synch'); //Load our Github!
+
 
 
 });

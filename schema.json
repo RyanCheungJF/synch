@@ -1,7 +1,6 @@
 {
   "type": "object",
 
-
     "AutoSave": {
       "title": "Automatically save changes.",
       "description": "If set to true then changes will be automatically saved.",
