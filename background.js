@@ -1,4 +1,6 @@
+
 console.log("background.js working");
+
 /*
 chrome.commands.onCommand.addListener(function(command){
 
@@ -10,9 +12,7 @@ chrome.commands.onCommand.addListener(function(command){
   }
 
 
-
-
 } );
 
-
 */
+

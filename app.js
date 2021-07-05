@@ -4,11 +4,15 @@ const paragraphs = document.querySelectorAll('p');
 var para_counter = -1;
 var para_pressed = false;
 var para_lastHTML = paragraphs[paragraphs.length - 1].innerHTML;
+let pbind; 
+chrome.storage.local.get(['paras'], function(result) { pbind = result.paras; });
 //******************************************************************
 const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 var headers_counter = -1;
 var headers_pressed = false;
 var headers_lastHTML = headers[headers.length - 1].innerHTML;
+let hbind;
+chrome.storage.local.get(['headers'], function(result) { hbind = result.headers; });
 //******************************************************************
 const listelems = document.querySelectorAll('li');
 var list_counter = -1;
@@ -21,13 +25,7 @@ var searched = false;
 var last_link = null;
 //******************************************************************
 var all = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li');
-//var allarr = [];
-var allcontent = Array.from(all,item => item.innerHTML).filter(i => !i.includes("href"));
-/*
-for (var i = 0; i < all.length; i++) {
-    allarr[i] = allarr[i].innerHTML;
-}
-*/
+var allcontent = [...all].map(i => i.innerHTML).filter(i => !i.includes("href"));
 for (var i = 0; i < allcontent.length; i++) {
     allcontent[i] = cleanupText(allcontent[i], allcontent, i);
 }
@@ -45,6 +43,8 @@ for (var i = 0; i < all.length; i++) {
 // Hyperlink Handling
 var hyperlinks = [];
 var linkTitles = [];
+let hlinksbind;
+chrome.storage.local.get(['hlinks'], function(result) { hlinksbind = result.hlinks; });
 for (var link = 0; link < links.length; link++)  {
     let hyperlink = links[link].getAttribute("href");
     if (hyperlink != null && hyperlink.substring(0, 4) != "http") {
@@ -185,7 +185,8 @@ window.addEventListener("keypress",
     }
 );
 
-// List Elements
+// List Elements 
+// TODO: CLEAR THIS PART UP FOR GHOST ELEMS
 window.addEventListener("keypress",
     function(event) {
         if (event.key.charCodeAt(0) === 53) {

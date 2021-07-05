@@ -20,9 +20,7 @@
     "id":"ruleset_1",
     "enabled":true,
     "path":"rules.json"
-
   }]
-
   },
   "action" : {},
 
@@ -62,42 +60,38 @@
     }
   },
 
-
-
-
-
   "options_ui": {
     "page": "options.html",
     "open_in_tab": true
   },
+
   "background":{
+
     "service_worker" : "contextMenu.js",
     "service_worker": "background.js"
 
 
 
+
   },
+
   "icons":{
     "16": "imgs/logo.png",
     "24": "imgs/logo.png",
     "32": "imgs/logo.png"
-
   },
 
   "action":{
-
      "default_title":"Synch Settings",
      "default_popup": "popup.html"
-
-
-   },
+  },
 
   "content_scripts": [
    {
      "matches": ["<all_urls>"],
 
      "js": ["app.js" ]
+
    }
  ]
-
 }
