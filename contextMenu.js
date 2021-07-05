@@ -16,9 +16,7 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
     let engine = chrome.tts;
     engine.speak(clickData.selectionText);
 
-  console.log("Speaking now");
+    console.log("Speaking now");
 
   }
 });
-
-=
