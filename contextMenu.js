@@ -15,8 +15,10 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
   if(clickData.menuItemId == "speakwords" && clickData.selectionText){
     let engine = chrome.tts;
     engine.speak(clickData.selectionText);
+
+
     console.log("Speaking now");
+
   }
 });
-
 
