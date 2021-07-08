@@ -138,7 +138,11 @@ window.addEventListener('keydown',
 // Paragraphs
 window.addEventListener('keydown',
     function(event) {
+<<<<<<< HEAD
         if (event.key.charCodeAt(0) === 49 && event.altKey) {
+=======
+        if (event.key.charCodeAt(0) == 49 && event.altKey) {
+>>>>>>> d50b9a76384509f16f4fd8505b8302d38bc5005c
             resetHighlights();
             if (para_pressed) {
                 para_counter = para_counter - 2;
@@ -165,7 +169,11 @@ window.addEventListener('keydown',
 // Headers
 window.addEventListener('keydown',
     function(event) {
+<<<<<<< HEAD
         if (event.key.charCodeAt(0) === 50 && event.altKey) {
+=======
+        if (event.key.charCodeAt(0) == 50 && event.altKey) {
+>>>>>>> d50b9a76384509f16f4fd8505b8302d38bc5005c
             resetHighlights();
             if (headers_pressed) {
                 headers_counter = headers_counter - 2;
@@ -188,7 +196,10 @@ window.addEventListener('keydown',
     }
 );
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d50b9a76384509f16f4fd8505b8302d38bc5005c
 // Math function to deal with indexing as we use modulo function
 function index(num, len) {
     return num % len < 0 ? len + num : num % len;
