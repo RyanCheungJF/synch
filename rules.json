@@ -1,15 +1,5 @@
 [
-  {
-    "id": 1,
-    "priority": 1,
-    "action": { "type": "block" },
-    "condition": {"urlFilter":"||googleads*", "resourceTypes": ["main_frame"] }
-  },
+{"id":1,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"run-syndicate", "resourceTypes": ["sub_frame","image","script","main_frame"]}},
+{"id":2,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"bebi", "resourceTypes": ["sub_frame","image","script","main_frame"]}}
 
-  {
-  "id": 2,
-  "priority": 1,
-  "action": { "type": "block" },
-  "condition": {"urlFilter":"googlesyndication.com/*", "resourceTypes": ["main_frame"] }
-  }
 ]

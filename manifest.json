@@ -19,7 +19,7 @@
     "rule_resources":[{
     "id":"ruleset_1",
     "enabled":true,
-    "path":"rules.json"
+    "path":"easy_list_4.json"
   }]
   },
   "action" : {},
@@ -28,7 +28,7 @@
     "paragraphs": {
       "suggested_key": {
 
-        "default": "Ctrl+Shift+P"
+        "default": "Ctrl+Shift+J"
 
       },
 
@@ -45,7 +45,7 @@
     },
     "hyperlinks":{
       "suggested_key" : {
-        "default" : "Ctrl+Shift+L"
+        "default" : "Ctrl+Shift+K"
       },
       "description" : "Searching through hyperlinks"
 
@@ -53,7 +53,7 @@
 
     "hyperlinks results":{
       "suggested_key" : {
-        "default" : "Ctrl+Shift+K"
+        "default" : "Ctrl+Shift+O"
       },
       "description" : "Listing out the results from hyperlinks"
 
@@ -66,11 +66,7 @@
   },
 
   "background":{
-
-    "service_worker" : "contextMenu.js",
     "service_worker": "background.js"
-
-
 
 
   },

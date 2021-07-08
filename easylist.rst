@@ -1,4 +1,3 @@
-
 &ad.vid=$~xmlhttprequest
 &ad_block=
 &ad_box_
