@@ -3,13 +3,13 @@
     "id": 1,
     "priority": 1,
     "action": { "type": "block" },
-    "condition": {"urlFilter":"||googleads*", "resourceTypes": ["main_frame"] }
+    "condition": {"urlFilter":"*ads*", "resourceTypes": ["main_frame"] }
   },
 
   {
   "id": 2,
   "priority": 1,
   "action": { "type": "block" },
-  "condition": {"urlFilter":"googlesyndication.com/*", "resourceTypes": ["main_frame"] }
+  "condition": {"urlFilter":"*googlesyndication.com/*", "resourceTypes": ["main_frame"] }
   }
 ]
