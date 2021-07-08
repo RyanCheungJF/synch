@@ -19,7 +19,7 @@
     "rule_resources":[{
     "id":"ruleset_1",
     "enabled":true,
-    "path":"easy_list_3.json"
+    "path":"easy_list_4.json"
   }]
   },
   "action" : {},
