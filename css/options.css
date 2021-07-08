@@ -1,23 +1,86 @@
-
-body {
-    background-color: #333300;
-    color: dodgerblue;
+* {
+    box-sizing: border-box;
 }
 
-h1 {
-    color: grey;
-    text-align: center;
-    font: large;
+body {
+    background-image:url('../imgs/logo.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #00fff7;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    min-width:0;
+    width: 400px;
+    max-width: 100%;
+    border-radius: 5px;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.input {
+.header {
+    padding: 20px 40px;
+}
 
+.form {
+    padding: 30px 40px;
+}
 
+.header h1 {
+    margin: 0;
+    font-size: large;
+}
+
+.field {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.field label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.field input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.field small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.field.success input {
+    border-color: #2ecc71;
+}
+
+.field.error input {
+    border-color: #e74c3c;
+}
+
+.field.error small {
+    visibility: visible;
+    color: #e74c3c;
+    font-size: 16px;
+}
+
+.form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
 }
