@@ -1,4 +1,5 @@
 let engine = window.speechSynthesis;
+chrome.storage.local.get('rate', function(result) { engine.rate = result.rate; });
 //******************************************************************
 const paralist = document.querySelectorAll('p, li');
 let paragraphs = [...paralist]
@@ -9,14 +10,16 @@ var para_counter = -1;
 var para_pressed = false;
 var para_lastHTML = paragraphs[paragraphs.length - 1].innerHTML;
 let pbind; 
-chrome.storage.local.get(['paras'], function(result) { pbind = result.paras; });
+chrome.storage.local.get('paras', function(result) { pbind = result.paras; });
+if (pbind == undefined) { pbind = 49; }
 //******************************************************************
 const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 var headers_counter = -1;
 var headers_pressed = false;
 var headers_lastHTML = headers[headers.length - 1].innerHTML;
 let hbind;
-chrome.storage.local.get(['headers'], function(result) { hbind = result.headers; });
+chrome.storage.local.get('headers', function(result) { hbind = result.headers; });
+if (hbind == undefined) { hbind = 50; }
 //******************************************************************
 const links = document.querySelectorAll('a');
 var links_counter = 0;
@@ -43,7 +46,14 @@ for (var i = 0; i < all.length; i++) {
 var hyperlinks = [];
 var linkTitles = [];
 let hlinksbind;
-chrome.storage.local.get(['hlinks'], function(result) { hlinksbind = result.hlinks; });
+chrome.storage.local.get('hlinks', function(result) { hlinksbind = result.hlinks; });
+if (hlinksbind == undefined) { hlinksbind = 51; }
+let hyperlinkbind;
+chrome.storage.local.get('hyperlink', function(result) { hyperlinkbind = result.hyperlink; });
+if (hyperlinkbind == undefined) { hyperlinkbind = 52; }
+let redirectbind;
+chrome.storage.local.get('redirect', function(result) { redirectbind = result.redirect; });
+if (redirectbind == undefined) { redirectbind = 48; }
 for (var link = 0; link < links.length; link++)  {
     let hyperlink = links[link].getAttribute("href");
     if (hyperlink != null && hyperlink.substring(0, 4) != "http") {
@@ -83,7 +93,7 @@ function findLink(str) {
 // This event listener will await a prompt from the user to search for. Entering nothing will return all hyperlinks.
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === 51 && event.altKey) {
+        if (event.key.charCodeAt(0) === hlinksbind && event.altKey) {
             searched = true;
             engine.cancel();
             engine.speak(new SpeechSynthesisUtterance("Please type in the keyword and hit enter to search among hyperlinks!"));
@@ -106,7 +116,7 @@ window.addEventListener('keydown',
 // Used to alternate through the hyperlinks, similar to paragraphs.
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === 52 && event.altKey) {
+        if (event.key.charCodeAt(0) === hyperlinkbind && event.altKey) {
             if (!searched) {
                 engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
             } else {
@@ -124,7 +134,7 @@ window.addEventListener('keydown',
 // Used to visit a hyperlink after choosing.
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === 48 && event.altKey) {
+        if (event.key.charCodeAt(0) === redirectbind && event.altKey) {
             if (last_link == null) {
                 engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
             } else {
@@ -138,7 +148,7 @@ window.addEventListener('keydown',
 // Paragraphs
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) == 49 && event.altKey) {
+        if (event.key.charCodeAt(0) == pbind && event.altKey) {
             resetHighlights();
             if (para_pressed) {
                 para_counter = para_counter - 2;
@@ -165,7 +175,7 @@ window.addEventListener('keydown',
 // Headers
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) == 50 && event.altKey) {
+        if (event.key.charCodeAt(0) == hbind && event.altKey) {
             resetHighlights();
             if (headers_pressed) {
                 headers_counter = headers_counter - 2;
@@ -224,7 +234,7 @@ function cleanBrackets(str) {
 // Reads in natural order instead according to the DOM
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === 122 && event.altKey) {
+        if (event.key.charCodeAt(0) === 32 && event.altKey) {
             event.preventDefault();
             resetHighlights();
             var ind = allcontent.indexOf(last_content) + 1;
