@@ -1,6 +1,6 @@
 {
   "name": "Synch",
-  "description": "Text To Speech for the visually impaired",
+  "description": "Text To Speech for the visually impaired.",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
