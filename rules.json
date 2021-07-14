@@ -1,5 +1,6 @@
 [
-{"id":1,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"run-syndicate", "resourceTypes": ["sub_frame","image","script","main_frame"]}},
-{"id":2,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"bebi", "resourceTypes": ["sub_frame","image","script","main_frame"]}}
-
+{"id":1,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"run-syndicate", "resourceTypes": ["sub_frame","image"]}},
+{"id":2,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"bebi", "resourceTypes": ["sub_frame","image"]}},
+{"id":3,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"tpc.googlesyndication.com", "resourceTypes": ["sub_frame","image"]}},
+{"id":4,"priority": 1,"action": { "type": "block" },"condition": {"urlFilter":"bidgear", "resourceTypes": ["sub_frame","image"]}}
 ]

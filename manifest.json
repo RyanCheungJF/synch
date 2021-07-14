@@ -20,39 +20,22 @@
     "id":"ruleset_1",
     "enabled":true,
     "path":"easy_list_4.json"
-  }]
+  },
+  {
+    "id":"ruleset_2",
+    "enabled":true,
+    "path":"rules.json"
+
+  }
+
+
+
+
+
+]
   },
 
-  "action" : {},
 
-  "commands": {
-    "paragraphs": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+J"
-      },
-      "description":"Reading through Paragraphs"
-    },
-
-    "headers":{
-      "suggested_key" : {
-        "default" : "Ctrl+Shift+H"
-      },
-      "description" : "Reading through headers"
-    },
-    "hyperlinks":{
-      "suggested_key" : {
-        "default" : "Ctrl+Shift+K"
-      },
-      "description" : "Searching through hyperlinks"
-    },
-    "hyperlinks results":{
-      "suggested_key" : {
-        "default" : "Ctrl+Shift+O"
-      },
-      "description" : "Listing out the results from hyperlinks"
-    }
-  },
-  
   "options_ui": {
     "page": "options.html",
     "open_in_tab": true
