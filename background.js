@@ -2,7 +2,6 @@
 console.log("background.js working");
 
 //ContextMenu
-
 chrome.contextMenus.create({
     "id":"speakwords",
     "title":"Speak Words",
@@ -23,9 +22,6 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
 
   }
 });
-
-
-
 
 /*
 chrome.commands.onCommand.addListener(function(command){

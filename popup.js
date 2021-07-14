@@ -1,4 +1,4 @@
-document.querySelector('#options').addEventListener('click',function() {
+document.querySelector('#options').addEventListener('click', function() {
     if (chrome.runtime.openOptionsPage) {
         chrome.runtime.openOptionsPage();
     } else {
@@ -6,13 +6,12 @@ document.querySelector('#options').addEventListener('click',function() {
     }
 });
 
-document.querySelector('#ourGithub').addEventListener('click', function () {
+document.querySelector('#info').addEventListener('click', function() {
+    window.open('https://github.com/RyanCheungJF/Synch/blob/main/docs/UserGuide.md');
+});
 
-
-    window.open('https://github.com/RyanCheungJF/Synch'); //Load our Github!
-
-
-
+document.querySelector('#ourGithub').addEventListener('click', function() {
+    window.open('https://github.com/RyanCheungJF/Synch'); 
 });
 
 //document.body.style.backgroundColor = "grey"; //BG colour

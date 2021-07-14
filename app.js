@@ -97,7 +97,7 @@ function findLink(str) {
 // This event listener will await a prompt from the user to search for. Entering nothing will return all hyperlinks.
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === hlinksbind && event.altKey) {
+        if (event.key.charCodeAt(0) == hlinksbind && event.altKey) {
             searched = true;
             engine.cancel();
             engine.speak(new SpeechSynthesisUtterance("Please type in the keyword and hit enter to search among hyperlinks!"));
@@ -120,7 +120,7 @@ window.addEventListener('keydown',
 // Used to alternate through the hyperlinks, similar to paragraphs.
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === hyperlinkbind && event.altKey) {
+        if (event.key.charCodeAt(0) == hyperlinkbind && event.altKey) {
             if (!searched) {
                 engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
             } else {
@@ -138,7 +138,7 @@ window.addEventListener('keydown',
 // Used to visit a hyperlink after choosing.
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === redirectbind && event.altKey) {
+        if (event.key.charCodeAt(0) == redirectbind && event.altKey) {
             if (last_link == null) {
                 engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
             } else {
@@ -235,10 +235,13 @@ function cleanBrackets(str) {
     return str.trim();
 }
 
+let inorderbind;
+chrome.storage.local.get('inorder', function(result) { redirectbind = result.inorder; });
+if (inorderbind == undefined) { inorderbind = 32; }
 // Reads in natural order instead according to the DOM
 window.addEventListener('keydown',
     function(event) {
-        if (event.key.charCodeAt(0) === 32 && event.altKey) {
+        if (event.key.charCodeAt(0) == inorderbind && event.altKey) {
             event.preventDefault();
             resetHighlights();
             var ind = allcontent.indexOf(last_content) + 1;

@@ -79,6 +79,7 @@ document.getElementById('save').addEventListener("click", (e) => {
     const rateVal = rate.value;
 
     let used = [];
+    let banned = [32, 68, 69, 70, 92, 100, 101, 102];
 
     let temp = new Map();
     temp.set('paras', paraVal);
@@ -97,7 +98,11 @@ document.getElementById('save').addEventListener("click", (e) => {
             errorValidate(document.getElementById(key), "Controls for " + dict.get(key) + " must be one key only.");
             engine.speak(new SpeechSynthesisUtterance("Controls for " + dict.get(key) + " must be one key only."));
             return;
-        }  else if (used.includes(convertToAscii(value))) {
+        } else if (banned.includes(value.charCodeAt(0))) {
+            errorValidate(document.getElementById(key), "Invalid keybind used for " + dict.get(key));
+            engine.speak(new SpeechSynthesisUtterance("Invalid keybind used for " + dict.get(key)));
+            return;
+        } else if (used.includes(convertToAscii(value))) {
             errorValidate(document.getElementById(key), "This key has been used before.");
             engine.speak(new SpeechSynthesisUtterance("The key inputted in the " + dict.get(key) + " has been used before."));
             return;
