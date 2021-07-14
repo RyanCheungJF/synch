@@ -18,8 +18,10 @@
         * [5. Settings Page](#5-settings-page)
         * [6. Ad Detection](#6-ad-detection)
         * [7. Testing](#7-testing)
-        * [8. Survey Results](#8-survey-results)
-        * [9. Final Thoughts](#9-final-thoughts)
+            * [7.1 Unit Testing](#71-unit-testing)
+            * [7.2 System Testing](#72-system-testing)
+            * [7.3 User Testing](#72-user-testing)
+        * [8. Final Thoughts](#8-final-thoughts)
 
 ### 1. System Design
 
@@ -149,17 +151,40 @@ To be done by Milestone 3.
 
 ### 7. Testing
 
+#### 7.1 Unit Testing
+
 We decided to adopt unit testing to test the different components of our web extension. A separate test file ['app.test.js'](https://github.com/RyanCheungJF/Synch/blob/main/app.test.js) can be found in the repository containing tests made with [jest](https://jestjs.io/) to test the functions that we have employed in our code. 
 
-As our web extension is not a traditional mobile/ web app, we are currently still exploring different ways to test the DOM with either jest or jsdom.
+#### 7.2 System Testing
 
-To be done by Milestone 3.
+This section talks about the testing from our point of view and the requrirement sheds some light of the different concerns and objectives to be fulfilled. While they may briefly elaborate on the bugs and issues we faced, there is another section in the Learning Outcomes Guide dedicated to it, which may be found here.
 
-### 8. Survey Results
+| Feature                                                      | Requirements                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Filter out a certain HTML element and get the TTS engine to read its pure text | Use event listeners activated upon keypress to activate engine.<br />Bind these keys to a key and ensure that the text read out is:<br />-In order and of the same type.<br />-Loops around after reading the last element of the page.<br />-Ensure text is read and not the HTML representative of it. |
+| Double Press to read the previous text                       | Need to ensure that the double-press works as intended, and works within the timeout that is specified.<br />Ensure that when it is at the first element of the page, it loops to the very last. |
+| Filtering out links from content                             | Needed to initially filter out hyperlinks.<br />Then ensure that each hyperlink generated is valid and perform any cleanup if needed.<br />As a website has many hyperlinks, a keybind should prompt a window to let users filter out hyperlinks.<br />Title of URL link must then be close/ related to the url itself to give users an idea of what the link is about.<br />Needed to clean up some titles as they may be 'null'. |
+| Redirect to another page                                     | Ensure that redirect function redirects user to the right webpage.<br />Needed to do some cleaning up as certain texts after scraping are not valid  urls. |
+| Highlighting of the current text                             | Ensure that this feature does not replace the previously read text with other HTML.<br />Have to make sure that this feature does not break with the double press feature.<br />Ensure that when switching between reading paragraphs and headers, the webpage should still reset the text. |
+| Options Page                                                 | Need to link the Javascript present to the main app.<br />Need to make sure that there is validation on the settings that user can key in.<br />ensure that options is available from a dropdown and easily accessible. |
+| Ad Detection                                                 | Need to ensure that the script can detect most of the ads present on the page.<br />Ensure that there is the ability to manually add certain blockers. |
+| Packaging                                                    | Package our app for development and ensure that it is easy to download from the chrome store. |
 
-To be done by Milestone 3.
 
-### 9. Final Thoughts
+
+#### 7.3 User Testing
+
+We conducted a survey through Google Forms which can be found here.
+
+We asked 5 users to blindfold themselves and presented them with a task list listed below:
+
+-
+
+We then observed the participants of the survey and noted down the results.
+
+As for the survey, most of the questions were similar to the pre-survey conducted to be able to compare the results. The questions and results are presented below.
+
+### 8. Final Thoughts
 
 Additional Features that can be implemented in the future:
 

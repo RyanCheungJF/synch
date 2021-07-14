@@ -1,5 +1,9 @@
 // HTML Queries
 let engine = window.speechSynthesis;
+window.addEventListener('load', function() {
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("All options are used with the alt key."))
+});
 var form = document.getElementById('form');
 var paras = document.getElementById('paras');
 var headers = document.getElementById('headers');
@@ -8,6 +12,31 @@ var hyperlink = document.getElementById('hyperlink');
 var redirect = document.getElementById('redirect');
 var inorder = document.getElementById('inorder');
 var rate = document.getElementById('rate');
+
+paras.addEventListener('focus', function() {
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("Changing option for paragraphs."))
+});
+headers.addEventListener('focus', function() {
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("Changing option for headers."))
+});
+hlinks.addEventListener('focus', function() {
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("Changing option for hyperlink search."))
+});
+hyperlink.addEventListener('focus', function() {
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("Changing option for hyperlinks."))
+});
+redirect.addEventListener('focus', function() {
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("Changing option for redirect."))
+});
+inorder.addEventListener('focus', function() {
+    engine.cancel();
+    engine.speak(new SpeechSynthesisUtterance("Changing option for sequence reading."))
+});
 
 // Dictionary of bindings for errors
 let dict = new Map();
@@ -20,32 +49,24 @@ dict.set('inorder', "In-Order");
 dict.set('voices', "Voices");
 dict.set('rate', "Rate of speech")
 
-/* List of Deafult Settings
-chrome.storage.local.set({
-    paras: 49,
-    headers: 50,
-    hlinks: 51,
-    hyperlink: 52,
-    redirect: 38,
-    inorder: 32,
-    rate: 1,
-});
-*/
-
+// When there are clashing inputs
 function errorValidate(input, msg) {
     input.parentElement.querySelector('small').innerText = msg;
     input.parentElement.className = "field error";
 }
 
+// When there is no clashing inputs
 function successfulValidate(input) {
     input.parentElement.querySelector('small').innerText = "Saved Changes!";
     input.parentElement.className = "field success";
 }
 
+// Converts inputted values into ASCII values
 function convertToAscii(k) {
     return (k.charCodeAt(0) >= 65 && k.charCodeAt(0) <= 122) ? k.toLowerCase().charCodeAt(0) : k.charCodeAt(0);
 }
 
+// Update Function + Validation when "Save" is clicked
 document.getElementById('save').addEventListener("click", (e) => {
     e.preventDefault();
     engine.cancel();
