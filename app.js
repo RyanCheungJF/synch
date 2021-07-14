@@ -1,6 +1,8 @@
+// Initializers
 let engine = window.speechSynthesis;
 chrome.storage.local.get('rate', function(result) { engine.rate = result.rate; });
-//******************************************************************
+
+// Paragraphs
 const paralist = document.querySelectorAll('p, li');
 let paragraphs = [...paralist]
                     .filter(i => !i.innerHTML.includes("href"))
@@ -12,7 +14,8 @@ var para_lastHTML = paragraphs[paragraphs.length - 1].innerHTML;
 let pbind; 
 chrome.storage.local.get('paras', function(result) { pbind = result.paras; });
 if (pbind == undefined) { pbind = 49; }
-//******************************************************************
+
+// Headers
 const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
 var headers_counter = -1;
 var headers_pressed = false;
@@ -20,12 +23,14 @@ var headers_lastHTML = headers[headers.length - 1].innerHTML;
 let hbind;
 chrome.storage.local.get('headers', function(result) { hbind = result.headers; });
 if (hbind == undefined) { hbind = 50; }
-//******************************************************************
+
+// Hyperlinks
 const links = document.querySelectorAll('a');
 var links_counter = 0;
 var searched = false;
 var last_link = null;
-//******************************************************************
+
+// In Order Reader
 var all = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li');
 var allcontent = [...all].map(i => i.innerHTML).filter(i => !i.includes("href"));
 for (var i = 0; i < allcontent.length; i++) {
@@ -40,7 +45,6 @@ for (var i = 0; i < all.length; i++) {
         temp = i;
     }
 }
-//******************************************************************
 
 // Hyperlink Handling
 var hyperlinks = [];
