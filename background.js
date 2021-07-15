@@ -23,7 +23,7 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
   }
 });
 
-/Creating a Report Ad function
+//Creating a Report Ad function
 chrome.contextMenus.create({
   "id" : "reportAd",
   "title":"Report Ad",
