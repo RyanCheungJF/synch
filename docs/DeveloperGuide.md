@@ -20,7 +20,7 @@
         * [7. Testing](#7-testing)
             * [7.1 Unit Testing](#71-unit-testing)
             * [7.2 System Testing](#72-system-testing)
-            * [7.3 User Testing](#72-user-testing)
+            * [7.3 User Testing](#73-user-testing)
         * [8. Final Thoughts](#8-final-thoughts)
 
 ### 1. System Design
@@ -166,7 +166,7 @@ This section talks about the testing from our point of view and the requrirement
 | Filtering out links from content                             | Needed to initially filter out hyperlinks.<br />Then ensure that each hyperlink generated is valid and perform any cleanup if needed.<br />As a website has many hyperlinks, a keybind should prompt a window to let users filter out hyperlinks.<br />Title of URL link must then be close/ related to the url itself to give users an idea of what the link is about.<br />Needed to clean up some titles as they may be 'null'. |
 | Redirect to another page                                     | Ensure that redirect function redirects user to the right webpage.<br />Needed to do some cleaning up as certain texts after scraping are not valid  urls. |
 | Highlighting of the current text                             | Ensure that this feature does not replace the previously read text with other HTML.<br />Have to make sure that this feature does not break with the double press feature.<br />Ensure that when switching between reading paragraphs and headers, the webpage should still reset the text. |
-| Options Page                                                 | Need to link the Javascript present to the main app.<br />Need to make sure that there is validation on the settings that user can key in.<br />ensure that options is available from a dropdown and easily accessible. |
+| Options Page                                                 | Need to link the Javascript present to the main app.<br />Need to make sure that there is validation on the settings that user can key in.<br />Tested by keying in invalid keys to check if the bad inputs will still go through. |
 | Ad Detection                                                 | Need to ensure that the script can detect most of the ads present on the page.<br />Ensure that there is the ability to manually add certain blockers. |
 | Packaging                                                    | Package our app for development and ensure that it is easy to download from the chrome store. |
 
