@@ -23,13 +23,40 @@ chrome.contextMenus.onClicked.addListener(function(clickData){
   }
 });
 
-/*
-chrome.commands.onCommand.addListener(function(command){
+/Creating a Report Ad function
+chrome.contextMenus.create({
+  "id" : "reportAd",
+  "title":"Report Ad",
+  "type":"normal",
+  "contexts":["image","link"]
+},function(){
+  if (chrome.extension.lastError) {
+    console.log("Got expected error: " + chrome.extension.lastError.message);
+  }}
+);
+var id = 0;
 
-  if(command == headers):
+chrome.contextMenus.onClicked.addListener(function(clickData){
 
+  if(clickData.menuItemId == "reportAd"){
+    id ++;
+    if (clickData.linkUrl){
+    domain = "||" + clickData.linkUrl.substring(8);
+  };
+  if(clickData.srcUrl){
+    domain = "||" + clickData.srcUrl.substring(8) ;
+  }
+  console.log(domain);
+    chrome.declarativeNetRequest.updateDynamicRules(
+      {addRules:[{
+      "id":id,
+      "priority" : 1,
+      "action" : {"type" : "block"},
+      "condition": {"urlFilter":domain, "resourceTypes":["sub_frame"] }
+      }],
+      removeRuleIds:[id]
+  });
+  console.log("Ad reported and saved to database!");
 
-
-} );
-
-*/
+}
+});
