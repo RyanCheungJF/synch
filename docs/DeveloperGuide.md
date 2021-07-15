@@ -16,6 +16,8 @@
             * [3.3 Parsing HTML ](#33-parsing-html)
         * [4. Design](#4-design)
         * [5. Settings Page](#5-settings-page)
+            * [5.1 Options](#51-options)
+            * [5.2 UI/ UX](#52-ui/-ux)
         * [6. Ad Detection](#6-ad-detection)
         * [7. Testing](#7-testing)
             * [7.1 Unit Testing](#71-unit-testing)
@@ -32,6 +34,8 @@ Comes in the form of an out of the box chrome web extension.
 Small text file containing a filter list from [EasyList](https://easylist.to/) to keep track of html tags to mark as ads.
 
 Acts as a 'backend', with its aim to be lightweight.
+
+Options is stored using the Chrome local storage, same for ads that the user reports themselves.
 
 #### 1.2 Relevant Tools
 
@@ -74,7 +78,7 @@ We have provided a few under our settings page found under settings.js, with the
 
 #### 3.2 Activating the System
 
-We used the event listener `click`to activate our keypresses. We aimed to use number keys for default settings as most keyboards offer the number pad, offering a more densely populated control system which does not require the user to move much.
+We used the event listener `click` to activate our keypresses. We aimed to use number keys for default settings as most keyboards offer the number pad, offering a more densely populated control system which does not require the user to move much.
 
 The key button presses and their default settings are made as follow:
 
@@ -85,8 +89,7 @@ The key button presses and their default settings are made as follow:
 | 3           | Brings up a search bar to search for hyperlinks on the page (a, href in HTML) |
 | 4           | After filtering, toggles between hyperlinks' titles          |
 | 0           | Redirects the user to the last link's title read             |
-| r           | Reports an object as an ad                                   |
-| m           | Kill switch, terminates the program (Meant to be a button that is placed as far as possible from the other keys to prevent accidental usage) |
+| q           | Reads the page in sequence                                   |
 
 As we have observed in other screen readers, they only offer a single keypress to alternate between both headers and paragraphs, and we hope the options above provide flexibility to the user. 
 
@@ -137,17 +140,47 @@ Alternative designs for consideration at the initial stage of our project:
 
 ### 5. Settings Page
 
+#### 5.1 Options
+
 The logic used to make the settings page can be found under ['options.js'](https://github.com/RyanCheungJF/Synch/blob/main/options.js), with the HTML under ['options.html'](https://github.com/RyanCheungJF/Synch/blob/main/options.html) respectively. 
 
 As different keypresses are made to activate and read different sections of the website, we wanted to provide users with the flexibility to customize their experience. The settings makes use of Chrome's storage sync [API](https://developer.chrome.com/docs/extensions/reference/storage/#property-sync) to export and import the different values needed between each file.
 
-The function `checkKeys` is used to check if there any clashes in key bindings, or if certain disallowed keys are being attempted to be in use.
+The main bulk of the validation checker involves an event listener that is fired upon clicking the 'Save' button. The logic provided in this function mainly checks for input length, conflicting keys, and checks among a basket of keys which are not allowed to be used.
 
-To be done by Milestone 3.
+The rationale for this basket of banned keys is because we wanted the TTS to only be used with the 'ALT' + 'key user inputted' to make sure each press is intentional, and there are pre-programmed browser functions with 'ALT' + 'D, E, F, SPACE'. Furthermore, '\' is used for regex in Javascript and thus is another key that we have to look out for. As such, these keys form the set of banned keys in order for keypresses to work with 'ALT'.
+
+Currently we do not support using multiple key bindings eg. 'SHIFT + ALT + Q', but we considered to use [Chrome Commands](https://developer.chrome.com/docs/extensions/reference/commands/) to do so and import them in. However, we faced multiple issues which are further elaborated in our Learning Outcomes README including other bugs such as preventing default actions. However, for further implementations, it would definitely be a feature that we would want to implement.
+
+![](/imgs/ChromeCommands.jpg)
+
+#### 5.2 UI/ UX 
+
+As for the validation, we checked each field sequentially, but a better UI/ UX imporvement for the future would be to check all fields all at once using async. This will help to create a more smoother experience for the user.
+
+The settings page also has a few TTS voicelines to tell the user what field they are currently setting.
 
 ### 6. Ad Detection
 
-To be done by Milestone 3.
+#### 6.1 Adblock
+
+The current implementation of Adblock and its source code can be found [here](https://github.com/adblockplus). We based the adblock feature of their code, where its database of sites to block comes from a file called EasyList. We have added it to our repo and the raw file can be found [here](https://raw.githubusercontent.com/RyanCheungJF/Synch/main/easy_list.json). It is essentially a text file filled with regex and different links for the site to block. However, the file was made for python, and as such we had created a [python script](https://github.com/RyanCheungJF/Synch/blob/main/convert.py) to convert the text file to JSON such that the manifest could register it. The end product of the raw file can be found [here](https://raw.githubusercontent.com/RyanCheungJF/Synch/main/easy_list_4.json).
+
+#### 6.2 Manifest Versions
+
+The original adblock was built on Manifest V2, but there are plans to depreceate V2 as V3 has now been implemented. However, this change caused the original adblock to break at times, and the new formatting of V3 provided certain issues to write syntax for. If you would like to find out more about the difficulties we faced in implementing it into V3, it can be found in our Learning Outcomes README. Thus, this was one of the reasonings for the need to clean the EasyList and set its path subsequently in order to use it with the Declarative Net Request [API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/).
+
+#### 6.3 AdDetection Strength
+
+Developers are free to customize the strength of the ad detection level to their liking. We have experimented with the different settings and at higher levels, it may block certain sites completely due to how their HTML is formatted and the site being present in the list. 
+
+This can be done by going to ['convert.py'](https://github.com/RyanCheungJF/Synch/blob/main/convert.py) and changing the `resource type` to `main_frame` from `sub_frame`. Similarly, developers are free to tone down the settings by searching and changing some of the present restrictions, and even manually inject certain keywords of their choice to block.
+
+#### 6.4 Reporting an Ad
+
+While the list may seem comprehensive, there will definitely be certain ads that will escape our list especially given the lowered settings in order to not block out entire sites.
+
+As such, users can right click an ad if they see one, and are available to report it. TBC...
 
 ### 7. Testing
 

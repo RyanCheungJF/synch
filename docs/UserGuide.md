@@ -24,19 +24,23 @@ Alternatively, download our package from our GitHub Page.
 
 | Key-Binding | Functionality                                                |
 | ----------- | ------------------------------------------------------------ |
-| 1           | Toggles between paragraphs.                                  |
-| 2           | Toggles between headers.                                     |
-| 3           | Brings up a search bar to search for keywords among the links on the site. |
-| 4           | After searching, allows the user to toggle between the results. The titles of the links will be read out. |
-| 0           | Redirects the user to the last link being read out.          |
-| r           | Brings out the ad detection system.                          |
-| m           | Stops the reader, and allows the user to refresh the page.   |
+| ALT + 1     | Toggles between paragraphs.                                  |
+| ALT + 2     | Toggles between headers.                                     |
+| ALT + 3     | Brings up a search bar to search for keywords among the links on the site. |
+| ALT + 4     | After searching, allows the user to toggle between the results. The titles of the links will be read out. |
+| ALT + 0     | Redirects the user to the last link being read out.          |
+| ALT + r     | Brings out the ad detection system.                          |
+| ALT + q     | Toggles the webpage in order   |
+
+The default settings are listed above.
+
+All settings have to be used with 'ALT'. This is to ensure that each keypress is intentional and will not result in accidental/ unwanted browser commands.
 
 The extension works based on keypresses. As such, a single keypress of the bound key will cause it to carry out its functionality.
 
 Hit the same button twice within a time limit to allow the extension to read the previous message instead.
 
-The default time limit is 0.5 seconds, which can be changed in the settings page. Read on to find out about the different settings.
+The default time limit is 0.5 seconds.
 
 #### 2.2 Highlighting 
 
@@ -49,8 +53,6 @@ To facilitate user experience, the current section that Synch is reading will be
 | Settings | Property                                                  |
 | -------- | --------------------------------------------------------- |
 | rate     | Changes the speed at which the reader will read out text. |
-| voices   | Changes the gender and accent of the voice.               |
-| time     | Changes the delay for double tapping.                     |
 
 Apart from the key bindings mentioned under section 2.1, these are the other settings present which allows the user to customize their screen reader. 
 
@@ -66,7 +68,9 @@ Here, the user is able to customize their settings accordingly.
 
 #### 2.4 Ad Detection
 
-To be done by Milestone 3.
+The screen readers present on the web as of now often do not have ad support and will usually say "ad" when toggled over. As such, we wanted to have built in support to avoid such issues by detecting ads and blocking them. For non visually impaired individuals, we hope that this also provides a better user experience. However, our ad detection is not full proof, and as such may miss certain ads.
+
+Users may then right clidk on what they deem is an ad, and under 'Synch', there will be an option to report an ad.
 
 ### 3. Feedback
 

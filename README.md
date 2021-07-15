@@ -60,7 +60,9 @@ As such, after rounding up our survey results, we believe that this is indeed an
 - Out of the box
 - Lightweight and will not hinder with other background processes
 - Ability to skip ads and provide a cache system to keep track of blacklisted ads
-- Able to fast forward or go back on the go to skip unnecessary text blocks
+- Different keybinds to read different parts of a webpage
+- Hyperlink Support
+- Filter function to search for hyperlinks
 
 ### 5. Development Plan 
 
@@ -88,4 +90,4 @@ As such, after rounding up our survey results, we believe that this is indeed an
 
 - [User Guide](https://github.com/RyanCheungJF/Synch/blob/main/docs/UserGuide.md)
 - [Developer Guide](https://github.com/RyanCheungJF/Synch/blob/main/docs/DeveloperGuide.md)
-- Learning Outcomes (To be done by Milestone 3.)
+- [Learning Outcomes](https://github.com/RyanCheungJF/Synch/blob/main/docs/LearningOutcomes.md)
