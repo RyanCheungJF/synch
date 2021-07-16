@@ -7,9 +7,10 @@
         * [1. System Design](#1-system-design)
             * [1.1 Main Design](#11-main-design)
             * [1.2 Relevant Tools](#12-relevant-tools)
+            * [1.3 Installation](#13-installation)
         * [2. Pipeline](#2-pipeline)
-            * [2.1 User Flow:](#21-user-flow)
-            * [2.2 Class Diagram:](#22-class-diagram)
+            * [2.1 User Flow](#21-user-flow)
+            * [2.2 Class Diagram](#22-class-diagram)
         * [3. Implementation](#3-implementation)
             * [3.1 Speaking Feature](#31-speaking-feature)
             * [3.2 Activating the System](#32-activating-the-system)
@@ -17,7 +18,7 @@
         * [4. Design](#4-design)
         * [5. Settings Page](#5-settings-page)
             * [5.1 Options](#51-options)
-            * [5.2 UI/ UX](#52-ui/-ux)
+            * [5.2 UI/ UX](#52-ui-ux)
         * [6. Ad Detection](#6-ad-detection)
         * [7. Testing](#7-testing)
             * [7.1 Unit Testing](#71-unit-testing)
@@ -44,14 +45,32 @@ Our project will use a number of languages and libraries:
 - HTML, CSS, JavaScript
 - NodeJS
 - SpeechSynthesisUtterance 
+- Git
+- NPM
+
+#### 1.3 Installation
+
+Developers with git can clone this repository to obtain a copy of the source code:
+
+```git clone https://github.com/RyanCheungJF/Synch```
+
+We recommend using the IDE [Visual Studio Code](https://code.visualstudio.com/) to run our source code as it is versatile and can run both JavaScript and Python files.
+
+To support Python, users may download the [Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+
+Developers can then install [NodeJS and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if they have not done so.
+
+If developers would like to perform testing, they can bring up the terminal in VSC with 'CTROL + `' and type the following into the terminal:
+
+```npm install --save-dev jest```
 
 ### 2. Pipeline
 
-#### 2.1 User Flow:
+#### 2.1 User Flow
 
 ![](/imgs/UserFlow.png)
 
-#### 2.2 Class Diagram:
+#### 2.2 Class Diagram
 
 ![](/imgs/ClassDiagram.png)
 
@@ -84,12 +103,12 @@ The key button presses and their default settings are made as follow:
 
 | Key-Binding | Functionality                                                |
 | ----------- | ------------------------------------------------------------ |
-| 1           | Toggles between paragraphs (p tags in HTML)                  |
-| 2           | Toggles between headers (h1, h2, h3, h4, h5, h6 tags in HTML) |
-| 3           | Brings up a search bar to search for hyperlinks on the page (a, href in HTML) |
-| 4           | After filtering, toggles between hyperlinks' titles          |
-| 0           | Redirects the user to the last link's title read             |
-| q           | Reads the page in sequence                                   |
+| ALT + 1     | Toggles between paragraphs (p tags in HTML)                  |
+| ALT + 2     | Toggles between headers (h1, h2, h3, h4, h5, h6 tags in HTML) |
+| ALT + 3     | Brings up a search bar to search for hyperlinks on the page (a, href in HTML) |
+| ALT + 4     | After filtering, toggles between hyperlinks' titles          |
+| ALT + 0     | Redirects the user to the last link's title read             |
+| ALT + q     | Reads the page in sequence                                   |
 
 As we have observed in other screen readers, they only offer a single keypress to alternate between both headers and paragraphs, and we hope the options above provide flexibility to the user. 
 
@@ -180,7 +199,7 @@ This can be done by going to ['convert.py'](https://github.com/RyanCheungJF/Sync
 
 While the list may seem comprehensive, there will definitely be certain ads that will escape our list especially given the lowered settings in order to not block out entire sites.
 
-As such, users can right click an ad if they see one, and are available to report it. TBC...
+As such, users can right click an ad if they see one, and are available to report it. To be done by Milestone 3.
 
 ### 7. Testing
 
@@ -209,9 +228,7 @@ This section talks about the testing from our point of view and the requrirement
 
 We conducted a survey through Google Forms which can be found here.
 
-We asked 5 users to blindfold themselves and presented them with a task list listed below:
-
--
+To be done by Milestone 3.
 
 We then observed the participants of the survey and noted down the results.
 
