@@ -2,10 +2,6 @@
 
 ## Team buttersmarsh (Gemini)
 
-# **Orbital 2021**
-
-## Team buttersmarsh (Gemini)
-
 * [**Orbital 2021**](#orbital-2021)
     * [Team buttersmarsh (Gemini)](#team-buttersmarsh-gemini)
         * [1. Project Problem](#1-project-problem)
@@ -82,6 +78,7 @@ As such, after rounding up our survey results, we believe that this is indeed an
 
 **<u>Milestone 3 (Extension): *26th July*</u>**
 
+ - Push ad-detection feature
  - Clean up existing features
  - Make code more streamlined
  - Package for production
