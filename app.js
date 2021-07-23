@@ -11,7 +11,7 @@ let paragraphs = [...paralist]
 var para_counter = -1;
 var para_pressed = false;
 var para_lastHTML = paragraphs[paragraphs.length - 1].innerHTML;
-let pbind; 
+let pbind;
 chrome.storage.local.get('paras', function(result) { pbind = result.paras; });
 if (pbind == undefined) { pbind = 49; }
 
@@ -122,7 +122,7 @@ window.addEventListener('keydown',
     function(event) {
         if (event.key.charCodeAt(0) == hyperlinkbind && event.altKey) {
             if (!searched) {
-                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
+                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting alt + " + hyperlinkbind));
             } else {
                 if (links_counter === filterlinks.length) {
                     links_counter = 0;
@@ -140,7 +140,7 @@ window.addEventListener('keydown',
     function(event) {
         if (event.key.charCodeAt(0) == redirectbind && event.altKey) {
             if (last_link == null) {
-                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting 3!"));
+                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting alt + " + redirectbind));
             } else {
                 engine.speak(new SpeechSynthesisUtterance("Redirecting you to " + last_link[1]));
                 window.location.href = last_link[0];
