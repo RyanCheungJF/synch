@@ -8,8 +8,9 @@
     - [2. Usage](#2-usage)
       - [2.1 Main Keypresses](#21-main-keypresses)
       - [2.2 Highlighting ](#22-highlighting)
-      - [2.3 Settings ](#23-settings)
-      - [2.4 Ad Detection](#24-ad-detection)
+      - [2.3 Redirecting ](#23-redirecting)
+      - [2.4 Settings ](#24-settings)
+      - [2.5 Ad Detection](#25-ad-detection)
     - [3. Feedback](#3-feedback)
 
 ### 1. Installation
@@ -26,7 +27,7 @@ Once the folder has been created, developers can navigate to the extensions page
 
 Clicking it, developers can click 'Manage Extensions at the bottom'.
 
-![](/imgs/findingExtensions.png)
+![](/imgs/findingExtensions.jpg)
 
 Developers will then be redirected to an extension manager page.
 
@@ -34,7 +35,7 @@ On the right hand side, ensure that developer mode is turned on.
 
 On the left hand side, click 'Load Unpackaged' and select the folder to upload Synch.
 
-![](/imgs/developerMaterials.png)
+![](/imgs/developerMaterials.jpg)
 
 Once done, enable Synch and it will be ready to run. Happy testing!
 
@@ -70,7 +71,22 @@ To facilitate user experience, the current section that Synch is reading will be
 
 ![Alt Text](https://media.giphy.com/media/wltXsytlG4GJCbg9J3/giphy.gif)
 
-#### 2.3 Settings
+#### 2.3 Redirecting
+
+By default, users can hit `ALT + 3` to bring up a search bar. This search bar is used to search for hyperlinks on the page.
+
+![](/imgs/hyperlink_search.jpg)
+
+Users can then search for a keyword, i.e if the site had a link directing users to a 'World News' section, users can just type 'world' in the searchbar.
+
+There are two results of the search, either a success message or a failure message from the engine if it could not find anything matching your search.
+
+Users can then hit 'ALT + 4' to cycle through the results of the search if it was successful. The engine then reads the titles of the links. 
+
+Users can then hit 'ALT + 0' to redirect the site to the last read title.
+
+
+#### 2.4 Settings
 
 | Settings | Property                                                  |
 | -------- | --------------------------------------------------------- |
@@ -90,7 +106,7 @@ Here, the user is able to customize their settings accordingly.
 
 There are a few keys which are not allowed. Among them are the 'SHIFT, TAB, SPACE, d, e, f, \' keys. This is due to conflicts with the browser default commands. We seek your understanding to work with the constraints and would recommend users to use number/ alphabet keys.
 
-#### 2.4 Ad Detection
+#### 2.5 Ad Detection
 
 The screen readers present on the web as of now often do not have ad support and will usually say "ad" when toggled over. As such, we wanted to have built in support to avoid such issues by detecting ads and blocking them. For non visually impaired individuals, we hope that this also provides a better user experience. However, our ad detection is not full proof, and as such may miss certain ads.
 
@@ -106,6 +122,6 @@ Users may then right clidk on what they deem is an ad, and under 'Synch', there 
 
 Thanks for using our web extension, any and all feedback is welcome.
 
-Feel free to fill in our anonymous google form to provide us with feedback.
+Feel free to fill in our anonymous [google form](https://forms.gle/shDJbKfKJ92cbWFu9) to provide us with feedback.
 
 
