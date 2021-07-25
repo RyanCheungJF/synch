@@ -12,8 +12,12 @@ var para_counter = -1;
 var para_pressed = false;
 var para_lastHTML = paragraphs[paragraphs.length - 1].innerHTML;
 let pbind; 
-chrome.storage.local.get('paras', function(result) { pbind = result.paras; });
-if (pbind == undefined) { pbind = 49; }
+chrome.storage.local.get('paras', function(result) { 
+    pbind = result.paras;
+    if (pbind == undefined) {
+        pbind = 49;
+    } 
+});
 
 // Headers
 const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
@@ -21,8 +25,12 @@ var headers_counter = -1;
 var headers_pressed = false;
 var headers_lastHTML = headers[headers.length - 1].innerHTML;
 let hbind;
-chrome.storage.local.get('headers', function(result) { hbind = result.headers; });
-if (hbind == undefined) { hbind = 50; }
+chrome.storage.local.get('headers', function(result) { 
+    hbind = result.headers;
+    if (hbind == undefined) {
+        hbind = 50;
+    }
+});
 
 // Hyperlinks
 const links = document.querySelectorAll('a');
@@ -50,14 +58,26 @@ for (var i = 0; i < all.length; i++) {
 var hyperlinks = [];
 var linkTitles = [];
 let hlinksbind;
-chrome.storage.local.get('hlinks', function(result) { hlinksbind = result.hlinks; });
-if (hlinksbind == undefined) { hlinksbind = 51; }
+chrome.storage.local.get('hlinks', function(result) { 
+    hlinksbind = result.hlinks;
+    if (hlinksbind == undefined) {
+        hlinksbind = 51;
+    }
+});
 let hyperlinkbind;
-chrome.storage.local.get('hyperlink', function(result) { hyperlinkbind = result.hyperlink; });
-if (hyperlinkbind == undefined) { hyperlinkbind = 52; }
+chrome.storage.local.get('hyperlink', function(result) { 
+    hyperlinkbind = result.hyperlink; 
+    if (hyperlinkbind == undefined) {
+        hyperlinkbind = 52;
+    }
+});
 let redirectbind;
-chrome.storage.local.get('redirect', function(result) { redirectbind = result.redirect; });
-if (redirectbind == undefined) { redirectbind = 48; }
+chrome.storage.local.get('redirect', function(result) { 
+    redirectbind = result.redirect; 
+    if (redirectbind == undefined) {
+        redirectbind = 48;
+    }
+});
 for (var link = 0; link < links.length; link++)  {
     let hyperlink = links[link].getAttribute("href");
     if (hyperlink != null && hyperlink.substring(0, 4) != "http") {
@@ -236,8 +256,13 @@ function cleanBrackets(str) {
 }
 
 let inorderbind;
-chrome.storage.local.get('inorder', function(result) { redirectbind = result.inorder; });
-if (inorderbind == undefined) { inorderbind = 32; }
+chrome.storage.local.get('inorder', function(result) { 
+    inorderbind = result.inorder;
+    if (inorderbind == undefined) {
+        inorderbind = 113;
+    }    
+});
+
 // Reads in natural order instead according to the DOM
 window.addEventListener('keydown',
     function(event) {
