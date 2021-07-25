@@ -167,7 +167,7 @@ As different keypresses are made to activate and read different sections of the 
 
 The main bulk of the validation checker involves an event listener that is fired upon clicking the 'Save' button. The logic provided in this function mainly checks for input length, conflicting keys, and checks among a basket of keys which are not allowed to be used.
 
-The rationale for this basket of banned keys is because we wanted the TTS to only be used with the 'ALT' + 'key user inputted' to make sure each press is intentional, and there are pre-programmed browser functions with 'ALT' + 'D, E, F, SPACE'. Furthermore, '\' is used for regex in Javascript and thus is another key that we have to look out for. As such, these keys form the set of banned keys in order for keypresses to work with 'ALT'.
+The rationale for this basket of banned keys is because we wanted the TTS to only be used with the 'ALT' + 'key user inputted' to make sure each press is intentional, and there are pre-programmed browser functions with 'ALT' + 'D, E, F, SPACE'. Furthermore, the backslash key is used for regex in Javascript and thus is another key that we have to look out for. As such, these keys form the set of banned keys in order for keypresses to work with 'ALT'.
 
 Currently we do not support using multiple key bindings eg. 'SHIFT + ALT + Q', but we considered to use [Chrome Commands](https://developer.chrome.com/docs/extensions/reference/commands/) to do so and import them in. However, we faced multiple issues which are further elaborated in our Learning Outcomes README including other bugs such as preventing default actions. However, for further implementations, it would definitely be a feature that we would want to implement.
 
@@ -199,7 +199,9 @@ This can be done by going to ['convert.py'](https://github.com/RyanCheungJF/Sync
 
 While the list may seem comprehensive, there will definitely be certain ads that will escape our list especially given the lowered settings in order to not block out entire sites.
 
-As such, users can right click an ad if they see one, and are available to report it. To be done by Milestone 3.
+As such, users can right click an ad if they see one, and are available to report it. It will then add the link to a list of ads to be detected from.
+
+![](/imgs/reportAd.jpg)
 
 ### 7. Testing
 
@@ -228,17 +230,17 @@ This section talks about the testing from our point of view and the requrirement
 
 We conducted a survey through Google Forms which can be found here.
 
-To be done by Milestone 3.
+The survey included a small task list for participants to attempt and try. They include the main functionalities of our extension.
 
-We then observed the participants of the survey and noted down the results.
-
-As for the survey, most of the questions were similar to the pre-survey conducted to be able to compare the results. The questions and results are presented below.
+As for the survey questions, most of them were similar to the pre-survey conducted to be able to compare the results. The questions and results are presented below.
 
 ### 8. Final Thoughts
 
 Additional Features that can be implemented in the future:
 
 - Ability to allow the reader to re-visit last visited page.
-
-To be done by Milestone 3.
-
+- Machine Learning algorithms to streamline certain filter functions/ Predict the content of a hyperlink.
+- Allow screen to follow the current highlighted text.
+- A smarter filter/ skip feature to skim through the content of the whole page.
+- A beter HTML scraper to strip certain tag layouts set by the website.
+- Hopefully able to gain insight into Apple's VoiceOver API to make an app version that is more streamlined.

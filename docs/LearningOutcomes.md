@@ -1,6 +1,12 @@
-# **Orbital 2021 Learning Outcomes** 
+# **Orbital 2021 Learning Outcomes**
 
 ## Team buttersmarsh (Gemini)
+
+- [**Orbital 2021 Learning Outcomes** ](#orbital-2021-learning-outcomes)
+  - [Team buttersmarsh (Gemini)](#team-buttersmarsh-gemini)
+    - [1. Installation](#1-project-log)
+    - [2. Usage](#2-learning-outcomes)
+    - [3. Feedback](#3-about-us)
 
 ### 1. Project Log
 
@@ -20,4 +26,32 @@ This section includes the different difficulties we've came across, inclusive of
 | Chrome Commands                                              | We initially wanted to use chrome commands as it was a built in options page. Unfortunately, most of its compatibility is with Manifest V2 which caused us to be unable to import settings using the API as intended. |
 | Adblocking                                                   | Adblock taken from EasyList was mainly built upon Manifest V2, which caused the initial script to break. As Chrome does not support much of V2 now, we had to use V3 to build it. We wrote a Python script to then convert the easy list to a JSON file for the manifest to process it. |
 | Options                                                      | Certain keybinds such as '\' have reserved purposes such as for regex in Javascript and as such are unavailable for use. Furthermore, CORB interferes with using 'SHIFT' as a keybind and as such we had to use 'ALT' instead, but with that we had to block out certain pre programmed bindings as well. A bug we faced was not being able to get preventDeafult to work, hence resulting in the more limited choices of bindings. |
-| Adblocking Strength                                          | An unforseen bug was that adblocking at its highest restrictions seemed to blocked out certain sites completely or remove images as it deemed they were ads.  |
+| Adblocking Strength                                          | An unforseen bug was that adblocking at its highest restrictions seemed to blocked out certain sites completely or remove images as it deemed they were ads.  |                                                                                                                                                                                                    |
+
+### 2. Learning Outcomes
+
+- Learnt both HTML, CSS and more in depth JavaScript in order to web scrape. Furthermore, we learnt more about the underlying manifest and how Chrome interacts with it.
+- Understood Adblock's architecture, and managed to replicate it's functionality using regex and modifying it to be JSON files.
+- Learnt a bit of Unit Testing, which will be helpful in future SWE projects.
+- Also picked up certain SWE techniques.
+- Interacted with the Chrome API and gained a deeper understanding on how an extension is made and processed.
+
+While the original intention of the project was to make an iOS app similar to VoiceOver, Apple's API was not available and hence we compromised to work with an extension instead. However, in the future we do hope that we are able to make an app version of 'Synch', which was the ultimate and initial goal of our group.
+
+Ultimately, this was an interesting experience for the both of us as while formulating the idea, neither of us would've expected for the project to take this direction, as we were both thinking that we would make a more 'traditional' app instead. Despite this, it was intriguing to tinker around with the TTS engine and exploring a rather niche section of web development, especially one which involved support for the visually impaired.
+
+After embarking on this project, we do see the difficulties and challenges involved in providing support for the visually impaired due to the flexbility of HTML and the complex nature of how a DOM has no 'fixed' structure. Despite this, we do hope that more developers out there provide some form of support in the future for the visually impaired, and work towards the end goal of a more inclusive internet. 
+
+### 3. About Us
+
+Thanks for taking the time to read our documentation. We hope you enjoyed the project as much as we enjoyed making this.
+
+A bit more information about us:
+
+[Ryan Cheung](https://github.com/RyanCheungJF)
+Computer Science Undergraduate with interests in UI/ UX, web development.
+
+[Niranjan Gopinath](https://github.com/Niran-Chan)
+Mechanical Engineering Undergraduate specializing in Aerospace Engineering, with interests in web security, ethical hacking and bash.
+
+If you would like to contact us, feel free to drop us an email at ryan9cheung@gmail.com
