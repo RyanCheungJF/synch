@@ -7,7 +7,7 @@ chrome.contextMenus.create(
     "title":"Speak Words",
     "type": "normal",
     "contexts":["selection"]
-  }, 
+  },
   function() {
     if (chrome.extension.lastError) {
       console.log("Got expected error: " + chrome.extension.lastError.message);
@@ -43,23 +43,23 @@ chrome.contextMenus.onClicked.addListener( function (clickData) {
   if (clickData.menuItemId == "reportAd") {
     id ++;
     if (clickData.linkUrl) {
-      domain = "||" + clickData.linkUrl.substring(8);
+      domain = clickData.linkUrl.substring(8);
     }
   if  (clickData.srcUrl)  {
-    domain = "||" + clickData.srcUrl.substring(8) ;
+    domain = clickData.srcUrl.substring(8) ;
   }
-  console.log(domain);
+  console.log(domain,id);
   chrome.declarativeNetRequest.updateDynamicRules(
-    {
+    { removeRuleIds:[id],
       addRules:[
         {
           "id":id,
           "priority" : 1,
           "action" : { "type" : "block" },
-          "condition": { "urlFilter": domain, "resourceTypes": ["sub_frame"] }
+          "condition": { "urlFilter": domain, "resourceTypes": ["sub_frame","image"] }
         }
-      ],
-      removeRuleIds:[id]
+      ]
+
   });
   console.log("Ad reported and saved to database!");
   }
