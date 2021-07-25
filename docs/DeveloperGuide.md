@@ -64,6 +64,22 @@ If developers would like to perform testing, they can bring up the terminal in V
 
 ```npm install --save-dev jest```
 
+Once the folder has been created, developers can navigate to the extensions page in Chrome. The button is at the top right hand side of the browser next to the URL bar, and is labelled extensions.
+
+Clicking it, developers can click 'Manage Extensions at the bottom'.
+
+![](/imgs/findingExtensions.png)
+
+Developers will then be redirected to an extension manager page.
+
+On the right hand side, ensure that developer mode is turned on.
+
+On the left hand side, click 'Load Unpackaged' and select the folder to upload Synch.
+
+![](/imgs/developerMaterials.png)
+
+Once done, enable Synch and it will be ready to run. Happy testing!
+
 ### 2. Pipeline
 
 #### 2.1 User Flow
@@ -189,11 +205,15 @@ The current implementation of Adblock and its source code can be found [here](ht
 
 The original adblock was built on Manifest V2, but there are plans to depreceate V2 as V3 has now been implemented. However, this change caused the original adblock to break at times, and the new formatting of V3 provided certain issues to write syntax for. If you would like to find out more about the difficulties we faced in implementing it into V3, it can be found in our Learning Outcomes README. Thus, this was one of the reasonings for the need to clean the EasyList and set its path subsequently in order to use it with the Declarative Net Request [API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/).
 
-#### 6.3 AdDetection Strength
+#### 6.3 Ad Detection Strength
 
 Developers are free to customize the strength of the ad detection level to their liking. We have experimented with the different settings and at higher levels, it may block certain sites completely due to how their HTML is formatted and the site being present in the list. 
 
 This can be done by going to ['convert.py'](https://github.com/RyanCheungJF/Synch/blob/main/convert.py) and changing the `resource type` to `main_frame` from `sub_frame`. Similarly, developers are free to tone down the settings by searching and changing some of the present restrictions, and even manually inject certain keywords of their choice to block.
+
+An unforseen consequence is that certain images may be flagged as ads. And as such on websites such as news sites, images pertaining the headlines may be blocked as an unforseen circumstance. As the main adblocking file contains 50000 different keywords, it will be almost impossible to manually sieve out these differences. A more efficient algorithm is instead being looked into to try to differentiate these images to be classified as an ad.
+
+![](/imgs/adPower.jpg)
 
 #### 6.4 Reporting an Ad
 
