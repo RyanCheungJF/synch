@@ -68,7 +68,7 @@ Once the folder has been created, developers can navigate to the extensions page
 
 Clicking it, developers can click 'Manage Extensions at the bottom'.
 
-![](/imgs/findingExtensions.png)
+![](/imgs/findingExtensions.jpg)
 
 Developers will then be redirected to an extension manager page.
 
@@ -76,7 +76,7 @@ On the right hand side, ensure that developer mode is turned on.
 
 On the left hand side, click 'Load Unpackaged' and select the folder to upload Synch.
 
-![](/imgs/developerMaterials.png)
+![](/imgs/developerMaterials.jpg)
 
 Once done, enable Synch and it will be ready to run. Happy testing!
 
