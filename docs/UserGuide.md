@@ -14,9 +14,32 @@
 
 ### 1. Installation
 
-Navigate to the Chrome Web Store and look for the web application 'Synch'.
+*NOTE: Unfortuantely, at the point of updating this README, the extension is still pending review from Chrome's store team. As such, we cannot offer a direct link to download the extension, but will update the link once it is done.*
 
-Alternatively, download our package from our GitHub Page.
+*Instead, we would like to ask users to:*
+
+Download our ZIP here.
+
+Extract the contents to a folder.
+
+Once the folder has been created, developers can navigate to the extensions page in Chrome. The button is at the top right hand side of the browser next to the URL bar, and is labelled extensions.
+
+Clicking it, developers can click 'Manage Extensions at the bottom'.
+
+![](/imgs/findingExtensions.png)
+
+Developers will then be redirected to an extension manager page.
+
+On the right hand side, ensure that developer mode is turned on.
+
+On the left hand side, click 'Load Unpackaged' and select the folder to upload Synch.
+
+![](/imgs/developerMaterials.png)
+
+Once done, enable Synch and it will be ready to run. Happy testing!
+
+*NOTE: Currently waiting for Chrome's store team response, but link will be updated as soon as it is approved.*
+Navigate to the Chrome Web Store and look for the web application 'Synch'. Alternativelty, the link can be found here.
 
 ### 2. Usage
 
@@ -71,9 +94,13 @@ There are a few keys which are not allowed. Among them are the 'SHIFT, TAB, SPAC
 
 The screen readers present on the web as of now often do not have ad support and will usually say "ad" when toggled over. As such, we wanted to have built in support to avoid such issues by detecting ads and blocking them. For non visually impaired individuals, we hope that this also provides a better user experience. However, our ad detection is not full proof, and as such may miss certain ads.
 
+*NOTE: The ad detection may at times interfere with images on the site either due to the ad detection's strength/ format of the website.*
+
+![](/imgs/adPower.jpg)
+
 Users may then right clidk on what they deem is an ad, and under 'Synch', there will be an option to report an ad.
 
-TBC... (Need pictures)
+![](/imgs/reportAd.jpg)
 
 ### 3. Feedback
 
@@ -81,4 +108,4 @@ Thanks for using our web extension, any and all feedback is welcome.
 
 Feel free to fill in our anonymous google form to provide us with feedback.
 
-To be done by Milestone 3.
+

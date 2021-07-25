@@ -48,10 +48,12 @@ Thanks for taking the time to read our documentation. We hope you enjoyed the pr
 
 A bit more information about us:
 
-[Ryan Cheung](https://github.com/RyanCheungJF)
+[Ryan Cheung](https://github.com/RyanCheungJF):
+
 Computer Science Undergraduate with interests in UI/ UX, web development.
 
-[Niranjan Gopinath](https://github.com/Niran-Chan)
+[Niranjan Gopinath](https://github.com/Niran-Chan):
+
 Mechanical Engineering Undergraduate specializing in Aerospace Engineering, with interests in web security, ethical hacking and bash.
 
-If you would like to contact us, feel free to drop us an email at ryan9cheung@gmail.com
+If you would like to contact us, feel free to drop us an email at `ryan9cheung@gmail.com`
