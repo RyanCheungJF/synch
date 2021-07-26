@@ -253,29 +253,29 @@ The survey included a small task list for participants to attempt and try. They 
 
 As for the survey questions, most of them were similar to the pre-survey conducted to be able to compare the results. The questions and results are presented below.
 
-![](imgs/post_survey1.jpg)
+![](/imgs/post_survey1.jpg)
 
 We provided our users with a task list to let them try and test out the different functionalities present. We only provided the UserGuide README as reference but did not explicitly provide a step by step guide for users.
 
 The purpose of this was to test whether our extension may be complicated as well as let users have the free will to try and test out as they see fit. The results of this section will be elaborated further down.
 
-![](imgs/post_survey2.jpg)
+![](/imgs/post_survey2.jpg)
 
-![](imgs/post_survey3.jpg)
+![](/imgs/post_survey3.jpg)
 
-![](imgs/post_survey4.jpg)
+![](/imgs/post_survey4.jpg)
 
-![](imgs/post_survey5.jpg)
+![](/imgs/post_survey5.jpg)
 
-![](imgs/post_survey6.jpg)
+![](/imgs/post_survey6.jpg)
 
-![](imgs/post_survey7.jpg)
+![](/imgs/post_survey7.jpg)
 
-![](imgs/post_survey8.jpg)
+![](/imgs/post_survey8.jpg)
 
-![](imgs/post_survey9.jpg)
+![](/imgs/post_survey9.jpg)
 
-![](imgs/post_survey10.jpg)
+![](/imgs/post_survey10.jpg)
 
 After seeing the different feedback that users have gave, we see that certain users have trouble bringing up the search function for the hyperlinks. We did feel that it may be a bit counterintuitive for users to switch between multiple keybinds in order to get the result they desire. Seeing this, we do hope that we can improve this in the future by allowing users to search, alternate and redirect with just one single keybind.
 
