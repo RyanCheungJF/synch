@@ -15,13 +15,22 @@
 
 ### 1. Installation
 
-*NOTE: Unfortuantely, at the point of updating this README, the extension is still pending review from Chrome's store team. As such, we cannot offer a direct link to download the extension, but will update the link once it is done.*
+**NOTE: The current version on the Web Store is not updated as our update is still pending review. It can still be used with the exception of a bug.
 
-*Instead, we would like to ask users to:*
 
-Download our ZIP here.
+If you were to use this version and download straight from the store, it is mandatory to change and set your own options before it is able to work.
 
-Extract the contents to a folder.
+Under section 2.4, there is a guide on how to access options and set your own. Reminder that all options will be set with 'ALT' by default, i.e if you set a keybind to be '1', it will be activated with 'ALT + 1'.
+
+We apologize for the inconvenience, and will update this README with the latest changes.
+
+Last Updated: 26/7 10 PM**
+
+Navigate to the Chrome Web Store and look for the web application 'Synch'. Alternativelty, the link can be found [here](https://chrome.google.com/webstore/detail/synch/dgmaablnmfpnkipeiklohhlfdfbdifjl).
+
+*Alternatively, if you would like to obtain the latest version and avoid the bug, you can download a zip file from [here](https://drive.google.com/file/d/14PNAcwuR4uNXAvScM_-yJtctA_jjwKlB/view?usp=sharing).
+
+Extract the zip into a folder.
 
 Once the folder has been created, developers can navigate to the extensions page in Chrome. The button is at the top right hand side of the browser next to the URL bar, and is labelled extensions.
 
@@ -37,10 +46,7 @@ On the left hand side, click 'Load Unpackaged' and select the folder to upload S
 
 ![](/imgs/developerMaterials.jpg)
 
-Once done, enable Synch and it will be ready to run. Happy testing!
-
-*NOTE: Currently waiting for Chrome's store team response, but link will be updated as soon as it is approved.*
-Navigate to the Chrome Web Store and look for the web application 'Synch'. Alternativelty, the link can be found here.
+Able to use as per normal without dealing with the bug.*
 
 ### 2. Usage
 
@@ -105,6 +111,8 @@ Under options, the user can click this to bring one to the settings page as show
 Here, the user is able to customize their settings accordingly.
 
 There are a few keys which are not allowed. Among them are the 'SHIFT, TAB, SPACE, d, e, f, \' keys. This is due to conflicts with the browser default commands. We seek your understanding to work with the constraints and would recommend users to use number/ alphabet keys.
+
+Since all options are used with 'ALT', it is enabled by default. Hence, if '1' is used as a keybind, it will only be activated upon 'ALT + 1', and users only need to key '1' into the text field.
 
 #### 2.5 Ad Detection
 

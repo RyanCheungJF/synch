@@ -50,7 +50,7 @@ A bit more information about us:
 
 [Ryan Cheung](https://github.com/RyanCheungJF):
 
-Computer Science Undergraduate with interests in UI/ UX, web development.
+Computer Science Undergraduate with interests in UI/ UX, web development, GoLang.
 
 [Niranjan Gopinath](https://github.com/Niran-Chan):
 
