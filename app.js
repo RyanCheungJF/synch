@@ -1,6 +1,12 @@
 // Initializers
 let engine = window.speechSynthesis;
-chrome.storage.local.get('rate', function(result) { engine.rate = result.rate; });
+var rate = 1;
+chrome.storage.local.get('rate', function(result) { 
+    rate = result.rate;
+    if (result.rate == undefined) {
+        rate = 1;
+    }
+});
 
 // Paragraphs
 const paralist = document.querySelectorAll('p, li');
@@ -120,18 +126,24 @@ window.addEventListener('keydown',
         if (event.key.charCodeAt(0) == hlinksbind && event.altKey) {
             searched = true;
             engine.cancel();
-            engine.speak(new SpeechSynthesisUtterance("Please type in the keyword and hit enter to search among hyperlinks!"));
+            var txt = new SpeechSynthesisUtterance("Please type in the keyword and hit enter to search among hyperlinks!");
+            txt.rate = rate;
+            engine.speak(txt);
             var search = window.prompt("Search keyword for hyperlinks: ");
             if (search == null) {
-                engine.speak(new SpeechSynthesisUtterance("Cancelling search."));
+                txt = new SpeechSynthesisUtterance("Cancelling search.");
+                engine.speak(txt);
                 return;
             }
             findLink(search);
-            engine.speak(new SpeechSynthesisUtterance("Filtering for keyword " + search));
+            txt = new SpeechSynthesisUtterance("Filtering for keyword " + search);
+            engine.speak(txt);
             if (filterlinks.length === 0) {
-                engine.speak(new SpeechSynthesisUtterance("Sorry, there is no link with this keyword " + search));
+                txt = new SpeechSynthesisUtterance("Sorry, there is no link with this keyword " + search);
+                engine.speak(txt);
             } else {
-                engine.speak(new SpeechSynthesisUtterance("Done! Press 4 to alternate between the search results!"));
+                txt = new SpeechSynthesisUtterance("Done! Press 4 to alternate between the search results!");
+                engine.speak(txt);
             }
         }
     }
@@ -142,13 +154,17 @@ window.addEventListener('keydown',
     function(event) {
         if (event.key.charCodeAt(0) == hyperlinkbind && event.altKey) {
             if (!searched) {
-                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting alt + " + hyperlinkbind));
+                var txt = new SpeechSynthesisUtterance("Please search for a keyword by hitting alt + " + hyperlinkbind);
+                txt.rate = rate;
+                engine.speak(txt);
             } else {
                 if (links_counter === filterlinks.length) {
                     links_counter = 0;
                 }
                 last_link = [filterlinks[links_counter], filtertitles[links_counter]];
-                engine.speak(new SpeechSynthesisUtterance(filtertitles[links_counter]));
+                var txt = new SpeechSynthesisUtterance(filtertitles[links_counter]);
+                txt.rate = rate;
+                engine.speak(txt);
                 links_counter++;
             }
         }
@@ -160,9 +176,13 @@ window.addEventListener('keydown',
     function(event) {
         if (event.key.charCodeAt(0) == redirectbind && event.altKey) {
             if (last_link == null) {
-                engine.speak(new SpeechSynthesisUtterance("Please search for a keyword by hitting alt + " + redirectbind));
+                var txt = new SpeechSynthesisUtterance("Please search for a keyword by hitting alt + " + redirectbind);
+                txt.rate = rate;
+                engine.speak(txt);
             } else {
-                engine.speak(new SpeechSynthesisUtterance("Redirecting you to " + last_link[1]));
+                var txt = new SpeechSynthesisUtterance("Redirecting you to " + last_link[1]);
+                txt.rate = rate;
+                engine.speak(txt);
                 window.location.href = last_link[0];
             }
         }
@@ -185,10 +205,11 @@ window.addEventListener('keydown',
             para_lastHTML = paragraphs[index(para_counter, paragraphs.length)].innerHTML;
             last_content = para_lastHTML;
             engine.cancel();
-            engine.speak(
-                new SpeechSynthesisUtterance(
+            var txt = new SpeechSynthesisUtterance(
                     cleanupText(paragraphs[index(para_counter, paragraphs.length)]
-                        .innerHTML, paragraphs, para_counter)));
+                        .innerHTML, paragraphs, para_counter));
+            txt.rate = rate;
+            engine.speak(txt);
             window.setTimeout(function() {
                 paragraphs[index(para_counter, paragraphs.length)].innerHTML = "<mark>" + para_lastHTML + "</mark>";
             }, 500);
@@ -212,9 +233,11 @@ window.addEventListener('keydown',
             headers_lastHTML = headers[index(headers_counter, headers.length)].innerHTML;
             last_content = headers_lastHTML;
             engine.cancel();
-            engine.speak(new SpeechSynthesisUtterance(
+            var txt = new SpeechSynthesisUtterance(
                 cleanupText(headers[index(headers_counter, headers.length)]
-                    .innerHTML, headers, headers_counter)));
+                    .innerHTML, headers, headers_counter));
+            txt.rate = rate;
+            engine.speak(rate);
             window.setTimeout(function() {
                 headers[index(headers_counter, headers.length)].innerHTML = "<mark>" + headers_lastHTML + "</mark>";
             }, 500);
@@ -274,7 +297,9 @@ window.addEventListener('keydown',
                 ind = 0;
             }
             engine.cancel();
-            engine.speak(new SpeechSynthesisUtterance(allcontent[ind]));
+            var txt = new SpeechSynthesisUtterance(allcontent[ind]);
+            txt.rate = rate;
+            engine.speak(txt);
             last_content = allcontent[ind];
             var sieve;
             for (var i = 0; i < all.length; i++) {
