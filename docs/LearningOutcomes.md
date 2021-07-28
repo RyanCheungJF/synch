@@ -4,9 +4,9 @@
 
 - [**Orbital 2021 Learning Outcomes** ](#orbital-2021-learning-outcomes)
   - [Team buttersmarsh (Gemini)](#team-buttersmarsh-gemini)
-    - [1. Installation](#1-project-log)
-    - [2. Usage](#2-learning-outcomes)
-    - [3. Feedback](#3-about-us)
+    - [1. Project Log](#1-project-log)
+    - [2. Learning Outcomes](#2-learning-outcomes)
+    - [3. About Us](#3-about-us)
 
 ### 1. Project Log
 
