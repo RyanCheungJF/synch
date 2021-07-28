@@ -32,6 +32,12 @@ This project stems from a self directed software enginering module called ['Orbi
 
 Hence, one of the requirements is to log our hours spent on the project over the course of 3 months. If you would like to learn more, you may do so by clicking [here](https://docs.google.com/spreadsheets/d/16ZCVtac-iHqGs--4NDkFv1cV-XHdij5KR6NIbroeNq8/edit?usp=sharing).
 
+Here is the data in a glance, if you would like to view it in a more compact form.
+
+![](/imgs/hr_tracker1.jpg)
+
+![](/imgs/hr_tracker2.jpg)
+
 ### 2. Learning Outcomes
 
 - Learnt both HTML, CSS and more in depth JavaScript in order to web scrape. Furthermore, we learnt more about the underlying manifest and how Chrome interacts with it.
