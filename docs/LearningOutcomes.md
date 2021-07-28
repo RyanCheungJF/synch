@@ -28,6 +28,10 @@ This section includes the different difficulties we've came across, inclusive of
 | Options                                                      | Certain keybinds such as '\' have reserved purposes such as for regex in Javascript and as such are unavailable for use. Furthermore, CORB interferes with using 'SHIFT' as a keybind and as such we had to use 'ALT' instead, but with that we had to block out certain pre programmed bindings as well. A bug we faced was not being able to get preventDeafult to work, hence resulting in the more limited choices of bindings. |
 | Adblocking Strength                                          | An unforseen bug was that adblocking at its highest restrictions seemed to blocked out certain sites completely or remove images as it deemed they were ads.  |                                                                                                                                                                                                    |
 
+This project stems from a self directed software enginering module called ['Orbital'](https://orbital.comp.nus.edu.sg/).
+
+Hence, one of the requirements is to log our hours spent on the project over the course of 3 months. If you would like to learn more, you may do so by clicking [here](https://docs.google.com/spreadsheets/d/16ZCVtac-iHqGs--4NDkFv1cV-XHdij5KR6NIbroeNq8/edit?usp=sharing).
+
 ### 2. Learning Outcomes
 
 - Learnt both HTML, CSS and more in depth JavaScript in order to web scrape. Furthermore, we learnt more about the underlying manifest and how Chrome interacts with it.

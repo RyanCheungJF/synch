@@ -18,13 +18,13 @@
 **NOTE: The current version on the Web Store is not updated as our update is still pending review. It can still be used with the exception of a bug.**
 
 
-**If you were to use this version and download straight from the store, it is mandatory to change and set your own options before it is able to work.**
+**If you were to use this version and download straight from the store, it is mandatory to change and set your own options before it is able to work. Furthermore, it is not possible to change the rate of speech in this version**
 
 **Under section 2.4, there is a guide on how to access options and set your own. Reminder that all options will be set with 'ALT' by default, i.e if you set a keybind to be '1', it will be activated with 'ALT + 1'.**
 
 We apologize for the inconvenience, and will update this README with the latest changes.
 
-**Last Updated: 26/7 10 PM**
+**Last Updated: 28/7 10 PM**
 
 Navigate to the Chrome Web Store and look for the web application 'Synch'. Alternativelty, the link can be found [here](https://chrome.google.com/webstore/detail/synch/dgmaablnmfpnkipeiklohhlfdfbdifjl).
 
