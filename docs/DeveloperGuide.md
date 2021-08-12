@@ -1,6 +1,6 @@
 # **Orbital 2021 Developer Guide**
 
-## Team buttersmarsh (Gemini)
+## Team buttersmarsh (Apollo)
 
 - [**Orbital 2021 Developer Guide** ](#orbital-2021-developer-guide)
   - [Team buttersmarsh (Gemini)](#team-buttersmarsh-gemini)
@@ -285,6 +285,8 @@ Lastly, users found that it was hard to follow where and which section the engin
 
 We are happy to see that our extension has been regarded as an improvement over current screen readers, but we also believe much has yet to be completed. We have provided a skeleton and a standard but we feel that our features could be implemented in a more succint way. Perhaps we may need more advanced algorithms/ helpers such as Machine Learning. Further improvements may come in the form of applying such techniques to elevate certain functionalities to make the extension more streamlined.
 
+Furthermore, after testing on multiple websites, we found that our extension has issues working on other websites due to the different HTML formatting. Hence, we would want to test on a wider range of websites and try to use a more comprehensive way of parsing the HTML.
+
 The post survey was done on Google Forms and can be found [here](https://forms.gle/JNhTSGvpniKuyzHq5).
 
 _NOTE: While the survey may still be open, the updated results may only be published at a later date._
@@ -299,3 +301,4 @@ Additional Features that can be implemented in the future:
 - A smarter filter/ skip feature to skim through the content of the whole page.
 - A beter HTML scraper to strip certain tag layouts set by the website.
 - Hopefully able to gain insight into Apple's VoiceOver API to make an app version that is more streamlined.
+- Test on more websites to allow it to be more comprehensive.

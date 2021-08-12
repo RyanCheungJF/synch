@@ -1,6 +1,6 @@
 # **Orbital 2021**
 
-## Team buttersmarsh (Gemini)
+## Team buttersmarsh (Apollo)
 
 * [**Orbital 2021**](#orbital-2021)
     * [Team buttersmarsh (Gemini)](#team-buttersmarsh-gemini)
@@ -10,6 +10,8 @@
         * [4. Features](#4-features)
         * [5. Development Plan ](#5-development-plan-)
         * [6. Link to Guides](#6-link-to-guides)
+
+![](/imgs/synch_poster.jpg)
 
 ### 1. Project Problem
 

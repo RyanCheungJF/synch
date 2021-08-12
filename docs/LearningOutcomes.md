@@ -1,6 +1,6 @@
 # **Orbital 2021 Learning Outcomes**
 
-## Team buttersmarsh (Gemini)
+## Team buttersmarsh (Apollo)
 
 - [**Orbital 2021 Learning Outcomes** ](#orbital-2021-learning-outcomes)
   - [Team buttersmarsh (Gemini)](#team-buttersmarsh-gemini)
